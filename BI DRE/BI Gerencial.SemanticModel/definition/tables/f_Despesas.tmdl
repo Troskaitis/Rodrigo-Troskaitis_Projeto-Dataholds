@@ -1,0 +1,61 @@
+table f_Despesas
+	lineageTag: 5e6f7a8b-9c0d-1e2f-3a4b-5c6d7e8f9a0b
+
+	column mes
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 6f7a8b9c-0d1e-2f3a-4b5c-6d7e8f9a0b1c
+		summarizeBy: none
+		sourceColumn: mes
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column conta_id
+		dataType: string
+		lineageTag: 7a8b9c0d-1e2f-3a4b-5c6d-7e8f9a0b1c2d
+		summarizeBy: none
+		sourceColumn: conta_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column descricao_conta
+		dataType: string
+		lineageTag: 8b9c0d1e-2f3a-4b5c-6d7e-8f9a0b1c2d3e
+		summarizeBy: none
+		sourceColumn: descricao_conta
+
+		annotation SummarizationSetBy = Automatic
+
+	column grupo_dre
+		dataType: string
+		lineageTag: 9c0d1e2f-3a4b-5c6d-7e8f-9a0b1c2d3e4f
+		summarizeBy: none
+		sourceColumn: grupo_dre
+
+		annotation SummarizationSetBy = Automatic
+
+	column valor
+		dataType: double
+		formatString: "R$"\ #,##0.00;("R$"\ #,##0.00);"R$"\ 0.00
+		lineageTag: 0d1e2f3a-4b5c-6d7e-8f9a-0b1c2d3e4f5a
+		summarizeBy: sum
+		sourceColumn: valor
+
+		annotation SummarizationSetBy = Automatic
+
+	partition f_Despesas = m
+		mode: import
+		queryGroup: Fatos
+		source =
+				let
+				    Fonte = Value.NativeQuery(GoogleBigQuery.Database([Implementation="2.0"]){[Name="testesrh-508914"]}[Data], "SELECT#(lf)  FORMAT_DATE('%Y-%m-01', lf.data_competencia) AS mes,#(lf)  pc.conta_id,#(lf)  pc.descricao_conta,#(lf)  pc.grupo_dre,#(lf)  SUM(CASE #(lf)        WHEN lf.tipo = 'saida' THEN lf.valor #(lf)        WHEN lf.tipo = 'entrada' AND pc.grupo_dre = 'Despesas Operacionais' THEN -lf.valor #(lf)        ELSE 0 #(lf)      END) AS valor#(lf)FROM `testesrh-508914`.quimica_aurora.lancamentos_financeiros lf#(lf)LEFT JOIN `testesrh-508914`.quimica_aurora.plano_de_contas pc#(lf)  ON lf.conta_id = pc.conta_id#(lf)WHERE#(lf)  lf.status = 'confirmado'#(lf)  AND EXTRACT(YEAR FROM lf.data_competencia) = 2025#(lf)  AND EXTRACT(MONTH FROM lf.data_competencia) IN (1, 2, 3)#(lf)  AND COALESCE(pc.grupo_dre, '') IN ('Despesas Operacionais', 'Despesas Financeiras')#(lf)GROUP BY 1, 2, 3, 4#(lf)HAVING valor > 0", null, [EnableFolding=true]),
+				    #"Tipo Alterado" = Table.TransformColumnTypes(Fonte,{{"mes", type date}, {"valor", type number}})
+				in
+				    #"Tipo Alterado"
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Table
+

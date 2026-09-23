@@ -1,0 +1,242 @@
+table d_Calendario
+	lineageTag: eb0a2553-a026-4f06-b66c-4ec7a310a623
+
+	column Date
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 384a80ff-49a5-4aef-ab32-c093d85c6904
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Ano
+		dataType: int64
+		formatString: 0
+		lineageTag: deef439d-2c91-4e94-bc6a-2e27c006c5e9
+		summarizeBy: none
+		sourceColumn: Ano
+
+		annotation SummarizationSetBy = Automatic
+
+	column Semestre
+		dataType: int64
+		formatString: 0
+		lineageTag: 7f90f2ed-9f8a-4b25-a311-78d59c876ea0
+		summarizeBy: none
+		sourceColumn: Semestre
+
+		annotation SummarizationSetBy = Automatic
+
+	column Trimestre
+		dataType: string
+		lineageTag: bb9f74b9-aaaa-4921-b8f7-5245f1a04cc0
+		summarizeBy: none
+		sourceColumn: Trimestre
+
+		annotation SummarizationSetBy = Automatic
+
+	column Bimestre
+		dataType: int64
+		formatString: 0
+		lineageTag: 46eec539-f929-4ffc-b33c-fb0b397cbedd
+		summarizeBy: none
+		sourceColumn: Bimestre
+
+		annotation SummarizationSetBy = Automatic
+
+	column Mês3
+		dataType: int64
+		formatString: 0
+		lineageTag: 62d42143-ae60-4459-b84e-e69e3f02f9d7
+		summarizeBy: none
+		sourceColumn: Mês3
+
+		annotation SummarizationSetBy = Automatic
+
+	column Mês2
+		dataType: string
+		lineageTag: 4bf151fa-141e-40d4-9af6-ca3bea1806a1
+		summarizeBy: none
+		sourceColumn: Mês2
+
+		annotation SummarizationSetBy = Automatic
+
+	column Mês
+		dataType: string
+		lineageTag: f1aaaa17-6f87-4d69-a9f7-a4bffb94702a
+		summarizeBy: none
+		sourceColumn: Mês
+
+		annotation SummarizationSetBy = Automatic
+
+	column Mês/Ano
+		dataType: string
+		lineageTag: 1eebcc1e-bdd2-4604-9723-f74ae72eab70
+		summarizeBy: none
+		sourceColumn: Mês/Ano
+		sortByColumn: OrdenacaoMesAno
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column OrdenacaoMesAno
+		dataType: int64
+		formatString: 0
+		lineageTag: b688453f-b0ee-435b-8ddf-98744cc171a5
+		summarizeBy: none
+		sourceColumn: OrdenacaoMesAno
+
+		annotation SummarizationSetBy = Automatic
+
+	column Dia
+		dataType: int64
+		formatString: 0
+		lineageTag: 80485875-e02b-4cf4-9ec6-a185364a78cb
+		summarizeBy: none
+		sourceColumn: Dia
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Dia da Semana'
+		dataType: string
+		lineageTag: 64ca513d-d88a-402a-93b3-0ab8105f860a
+		summarizeBy: none
+		sourceColumn: Dia da Semana
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Dia da Semana Abreviado'
+		dataType: string
+		lineageTag: d9eb1948-6506-41a1-afe1-9594d1342e95
+		summarizeBy: none
+		sourceColumn: Dia da Semana Abreviado
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Núm da Semana'
+		dataType: int64
+		formatString: 0
+		lineageTag: 9607ad42-9550-4ef5-bffa-87f7cacd58e4
+		summarizeBy: none
+		sourceColumn: Núm da Semana
+
+		annotation SummarizationSetBy = Automatic
+
+	column DiaMes
+		dataType: string
+		lineageTag: 0959d553-a94e-4c6f-b997-405dbea8d542
+		summarizeBy: none
+		sourceColumn: DiaMes
+
+		annotation SummarizationSetBy = Automatic
+
+	column Feriados
+		dataType: string
+		lineageTag: 698af6ca-7ac3-49e7-a9eb-e458f0c1aebf
+		summarizeBy: none
+		sourceColumn: Feriados
+
+		annotation SummarizationSetBy = Automatic
+
+	column Tipo
+		dataType: string
+		lineageTag: 13a08db3-42b5-42fb-afb6-f1ad30c6e25d
+		summarizeBy: none
+		sourceColumn: Tipo
+
+		annotation SummarizationSetBy = Automatic
+
+	partition d_Calendario = m
+		mode: import
+		queryGroup: Dimensoes
+		source =
+				let
+				    // 1. Definição do período de datas (Altere os anos conforme sua necessidade)
+				    DataInicial = #date(2023, 1, 1),
+				    DataFinal = #date(2027, 12, 31),
+				    QtdeDias = Duration.Days(DataFinal - DataInicial) + 1,
+				
+				    // 2. Criar a lista de datas base
+				    ListaDatas = List.Dates(DataInicial, QtdeDias, #duration(1, 0, 0, 0)),
+				    TabelaDatas = Table.FromList(ListaDatas, Splitter.SplitByNothing(), type table[Date = date]),
+				
+				    // 3. Criação de todas as colunas solicitadas
+				    Ano = Table.AddColumn(TabelaDatas, "Ano", each Date.Year([Date]), Int64.Type),
+				    Semestre = Table.AddColumn(Ano, "Semestre", each Number.RoundUp(Date.Month([Date]) / 6), Int64.Type),
+				    Trimestre = Table.AddColumn(Semestre, "Trimestre", each "T" & Text.From(Date.QuarterOfYear([Date])), type text),
+				    Bimestre = Table.AddColumn(Trimestre, "Bimestre", each Number.RoundUp(Date.Month([Date]) / 2), Int64.Type),
+				    Mes3 = Table.AddColumn(Bimestre, "Mês3", each Date.Month([Date]), Int64.Type),
+				    Mes2 = Table.AddColumn(Mes3, "Mês2", each Text.Lower(Date.MonthName([Date], "pt-BR")), type text),
+				    Mes = Table.AddColumn(Mes2, "Mês", each Text.Lower(Text.Start([Mês2], 3)), type text),
+				    MesAno = Table.AddColumn(Mes, "Mês/Ano", each [Mês] & "/" & Text.End(Text.From([Ano]), 2), type text),
+				    OrdMesAno = Table.AddColumn(MesAno, "OrdenacaoMesAno", each [Ano] * 100 + [Mês3], Int64.Type),
+				    Dia = Table.AddColumn(OrdMesAno, "Dia", each Date.Day([Date]), Int64.Type),
+				    DiaSemana = Table.AddColumn(Dia, "Dia da Semana", each Text.Lower(Date.DayOfWeekName([Date], "pt-BR")), type text),
+				    DiaSemanaAbr = Table.AddColumn(DiaSemana, "Dia da Semana Abreviado", each Text.Lower(Text.Start([Dia da Semana], 3)), type text),
+				    NumSemana = Table.AddColumn(DiaSemanaAbr, "Núm da Semana", each Date.WeekOfYear([Date]), Int64.Type),
+				    DiaMes = Table.AddColumn(NumSemana, "DiaMes", each Text.PadStart(Text.From([Dia]), 2, "0") & "/" & Text.PadStart(Text.From([Mês3]), 2, "0"), type text),
+				
+				    // 4. Adicionar Feriados (Fixos Nacionais e Móveis calculados matematicamente)
+				    Feriados = Table.AddColumn(DiaMes, "Feriados", each
+				        let
+				            // Feriados Fixos do Brasil
+				            Fixo =
+				                if [DiaMes] = "01/01" then "Ano Novo"
+				                else if [DiaMes] = "21/04" then "Tiradentes"
+				                else if [DiaMes] = "01/05" then "Dia do Trabalhador"
+				                else if [DiaMes] = "07/09" then "Independência do Brasil"
+				                else if [DiaMes] = "12/10" then "Nossa Senhora Aparecida"
+				                else if [DiaMes] = "02/11" then "Finados"
+				                else if [DiaMes] = "15/11" then "Proclamação da República"
+				                else if [DiaMes] = "25/12" then "Natal"
+				                else null,
+				
+				            // Cálculo da data da Páscoa (Algoritmo de Meeus/Jones/Butcher) para achar feriados móveis
+				            A = Number.Mod([Ano], 19),
+				            B = Number.RoundDown([Ano] / 100),
+				            C = Number.Mod([Ano], 100),
+				            D = Number.RoundDown(B / 4),
+				            E = Number.Mod(B, 4),
+				            F = Number.RoundDown((B + 8) / 25),
+				            G = Number.RoundDown((B - F + 1) / 3),
+				            H = Number.Mod(19 * A + B - D - G + 15, 30),
+				            I = Number.RoundDown(C / 4),
+				            K = Number.Mod(C, 4),
+				            L = Number.Mod(32 + 2 * E + 2 * I - H - K, 7),
+				            M = Number.RoundDown((A + 11 * H + 22 * L) / 451),
+				            MesPascoa = Number.RoundDown((H + L - 7 * M + 114) / 31),
+				            DiaPascoa = Number.Mod(H + L - 7 * M + 114, 31) + 1,
+				            DataPascoa = #date([Ano], MesPascoa, DiaPascoa),
+				
+				            // Baseado na Páscoa, encontramos os demais feriados móveis
+				            Carnaval = Date.AddDays(DataPascoa, -47),
+				            SextaSanta = Date.AddDays(DataPascoa, -2),
+				            CorpusChristi = Date.AddDays(DataPascoa, 60),
+				
+				            Movel =
+				                if [Date] = Carnaval then "Carnaval"
+				                else if [Date] = SextaSanta then "Sexta-feira Santa"
+				                else if [Date] = DataPascoa then "Páscoa"
+				                else if [Date] = CorpusChristi then "Corpus Christi"
+				                else null
+				        in
+				            if Fixo <> null then Fixo else Movel, type text),
+				
+				    // 5. Adicionar a coluna Tipo (Verifica se é Feriado, Fim de Semana ou Dia Útil)
+				    Tipo = Table.AddColumn(Feriados, "Tipo", each
+				        if [Feriados] <> null then "Feriado"
+				        // Day.Monday define que a semana começa na segunda-feira. Assim, 5 e 6 representam Sábado e Domingo.
+				        else if Date.DayOfWeek([Date], Day.Monday) >= 5 then "Fim de Semana"
+				        else "Dia Útil", type text),
+				    #"Linhas Filtradas" = Table.SelectRows(Tipo, each [Date] >= #date(2025, 1, 1))
+				in
+				    #"Linhas Filtradas"
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Table
+

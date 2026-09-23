@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Relatório DRE — Power BI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --ink: #101826;
+      --ink-soft: #2b3547;
+      --paper: #f6f3ec;
+      --paper-card: #fffdf9;
+      --rule: #d8d2c2;
+      --brass: #a97e3d;
+      --brass-deep: #8a662f;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --paper: #12161e;
+        --paper-card: #181d27;
+        --rule: #333c4c;
+        --ink: #f2efe7;
+        --ink-soft: #c7cbd4;
+      }
+    }
+
+    :root[data-theme="dark"] {
+      --paper: #12161e;
+      --paper-card: #181d27;
+      --rule: #333c4c;
+      --ink: #f2efe7;
+      --ink-soft: #c7cbd4;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-padding-top: env(safe-area-inset-top, 0px);
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      padding-top: env(safe-area-inset-top, 0px);
+      padding-bottom: env(safe-area-inset-bottom, 0px);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .wrap {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 56px 24px 40px;
+    }
+
+    header {
+      margin-bottom: 40px;
+    }
+
+    .kicker {
+      font-size: 0.8125rem;
+      color: var(--brass-deep);
+      letter-spacing: 0.02em;
+      margin: 0 0 14px;
+      font-weight: 500;
+    }
+
+    h1 {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-weight: 600;
+      font-size: clamp(1.9rem, 4.4vw, 2.75rem);
+      line-height: 1.15;
+      margin: 0 0 16px;
+      letter-spacing: -0.01em;
+    }
+
+    .lede {
+      font-size: 1.05rem;
+      line-height: 1.6;
+      color: var(--ink-soft);
+      max-width: 62ch;
+      margin: 0;
+    }
+
+    .rule {
+      border: none;
+      border-top: 1px solid var(--rule);
+      margin: 36px 0;
+    }
+
+    .report-frame {
+      background: var(--paper-card);
+      border: 1px solid var(--rule);
+      border-radius: 6px;
+      padding: 10px;
+      box-shadow: 0 1px 2px rgba(16, 24, 38, 0.04);
+    }
+
+    .report-frame .label {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 4px 8px 14px;
+      font-size: 0.8125rem;
+      color: var(--ink-soft);
+    }
+
+    .report-frame .label .dot {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--brass);
+      margin-right: 8px;
+    }
+
+    .iframe-holder {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 600 / 373.5;
+      border-radius: 3px;
+      overflow: hidden;
+      background: #eee;
+    }
+
+    .iframe-holder iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .fallback-link {
+      margin-top: 14px;
+      font-size: 0.875rem;
+      color: var(--ink-soft);
+    }
+
+    .fallback-link a {
+      color: var(--brass-deep);
+    }
+
+    footer {
+      margin-top: 44px;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 0.8125rem;
+      color: var(--ink-soft);
+    }
+
+    @media (max-width: 520px) {
+      .wrap {
+        padding: 40px 18px 32px;
+      }
+
+      footer {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <p class="kicker">Caso Prático: Analista de Dados / BI</p>
+      <h1>Demonstração do Resultado do Exercício (DRE)</h1>
+      <p class="lede">
+        Relatório interativo construído em Power BI, com a apuração de receitas, custos e resultado do
+        período. Desenvolvido como parte de um projeto de análise financeira para candidatura a vaga.
+      </p>
+    </header>
+
+    <hr class="rule">
+
+    <div class="report-frame">
+      <div class="label">
+        <span><span class="dot"></span>BI DRE</span>
+        <span>Power BI · Interativo</span>
+      </div>
+      <div class="iframe-holder">
+        <iframe title="BI DRE"
+          src="https://app.powerbi.com/view?r=eyJrIjoiNDZkOWQyZGQtYWJkOS00MzU0LWJmNDctYWIwN2NlODE2MTJmIiwidCI6ImNiNDEwYzRmLTFhMDYtNGFlZC1hMjJlLTEwYzQ3OTUzNTU3MSJ9"
+          frameborder="0" allowfullscreen="true" loading="lazy">
+        </iframe>
+      </div>
+      <p class="fallback-link">
+        O relatório não carregou? <a
+          href="https://app.powerbi.com/view?r=eyJrIjoiNDZkOWQyZGQtYWJkOS00MzU0LWJmNDctYWIwN2NlODE2MTJmIiwidCI6ImNiNDEwYzRmLTFhMDYtNGFlZC1hMjJlLTEwYzQ3OTUzNTU3MSJ9"
+          target="_blank" rel="noopener">Abrir em uma nova aba</a>.
+      </p>
+    </div>
+
+    <footer>
+      <span>Projeto pessoal de análise financeira</span>
+      <span>Construído em Power BI</span>
+    </footer>
+  </div>
+</body>
+
+</html>

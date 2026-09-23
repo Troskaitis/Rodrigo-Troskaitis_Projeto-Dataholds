@@ -1,0 +1,123 @@
+table f_DRE
+	lineageTag: 7384e4a1-fb10-44b6-aa85-386f4a2502e5
+
+	column mes
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 41a3fe6b-c455-482f-8b8f-067dc6d7e69f
+		summarizeBy: none
+		sourceColumn: mes
+
+		variation Variation
+			isDefault
+			relationship: 5c9fd59a-d937-47bd-9f95-f8f194edee92
+			defaultHierarchy: LocalDateTable_26fc1f62-0c26-42a8-8099-811dd99153a4.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column receita_bruta
+		dataType: double
+		lineageTag: 2e938bb1-e71d-4286-8312-b83edd2707c0
+		summarizeBy: sum
+		sourceColumn: receita_bruta
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column deducoes_sobre_vendas
+		dataType: double
+		lineageTag: 77625042-de64-41a7-a852-a2ecca4fcaa0
+		summarizeBy: sum
+		sourceColumn: deducoes_sobre_vendas
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column receita_liquida
+		dataType: double
+		lineageTag: ffca7cca-16da-494a-a527-de4cfd617a50
+		summarizeBy: sum
+		sourceColumn: receita_liquida
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column cmv
+		dataType: double
+		lineageTag: 22a737a8-4da1-4b41-9cf8-8a075907ec13
+		summarizeBy: sum
+		sourceColumn: cmv
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column lucro_bruto
+		dataType: double
+		lineageTag: 0632db69-7cc2-42e5-8000-4e82b6428242
+		summarizeBy: sum
+		sourceColumn: lucro_bruto
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column despesas_operacionais
+		dataType: double
+		lineageTag: 28a3e37e-6e8b-49be-a9d5-d1aa752909da
+		summarizeBy: sum
+		sourceColumn: despesas_operacionais
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column despesas_financeiras
+		dataType: double
+		lineageTag: 40ec648c-496c-4c15-a7f0-77db6a9a6546
+		summarizeBy: sum
+		sourceColumn: despesas_financeiras
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column receitas_financeiras
+		dataType: double
+		lineageTag: 57150b54-597a-48ab-bf08-91c772ff27e9
+		summarizeBy: sum
+		sourceColumn: receitas_financeiras
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column resultado_do_periodo
+		dataType: double
+		lineageTag: e6d57802-787e-4015-aa50-38babcecfc6a
+		summarizeBy: sum
+		sourceColumn: resultado_do_periodo
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition f_DRE = m
+		mode: import
+		queryGroup: Fatos
+		source =
+				let
+				    Fonte = Value.NativeQuery(GoogleBigQuery.Database([Implementation="2.0"]){[Name="testesrh-508914"]}[Data], "WITH vendas AS (#(lf)  SELECT#(lf)    FORMAT_DATE('%Y-%m', data_emissao)  AS ano_mes,#(lf)    EXTRACT(YEAR  FROM data_emissao)    AS ano,#(lf)    EXTRACT(MONTH FROM data_emissao)    AS mes,#(lf)    -- Receita Bruta: soma dos valores de venda dos itens de notas emitidas#(lf)    SUM(valor_total_item)               AS receita_bruta,#(lf)    -- CMV: soma dos custos totais dos itens de notas emitidas#(lf)    SUM(custo_total_item)               AS cmv#(lf)  FROM `testesrh-508914`.quimica_aurora.notas_fiscais_itens#(lf)  WHERE#(lf)    status_nota = 'emitida'                        -- exclui notas canceladas#(lf)    AND EXTRACT(YEAR FROM data_emissao) = 2025#(lf)    AND EXTRACT(MONTH FROM data_emissao) IN (1, 2, 3)#(lf)  GROUP BY 1, 2, 3#(lf)),#(lf)-- =============================================================================#(lf)-- BLOCO 2 — LANÇAMENTOS FINANCEIROS CLASSIFICADOS#(lf)-- Regime: COMPETÊNCIA → usa data_competencia#(lf)-- LEFT JOIN para não perder contas órfãs (ex: 5.02)#(lf)-- COALESCE atribui grupo e natureza padrão quando a conta não está mapeada#(lf)-- =============================================================================#(lf)lancamentos_classificados AS (#(lf)  SELECT#(lf)    lf.id_lancamento,#(lf)    FORMAT_DATE('%Y-%m', lf.data_competencia)  AS ano_mes,#(lf)    EXTRACT(YEAR  FROM lf.data_competencia)    AS ano,#(lf)    EXTRACT(MONTH FROM lf.data_competencia)    AS mes,#(lf)    lf.historico,#(lf)    lf.tipo,#(lf)    lf.valor,#(lf)    lf.conta_id                                AS conta_id_lancamento,#(lf)    COALESCE(pc.conta_id,       lf.conta_id)   AS conta_id,#(lf)    COALESCE(pc.descricao_conta,'(sem cadastro no plano)') AS descricao_conta,#(lf)    COALESCE(pc.grupo_dre, CASE WHEN lf.conta_id = '5.02' THEN 'Receitas Financeiras' ELSE 'Despesas Operacionais' END) AS grupo_dre,#(lf)    COALESCE(pc.natureza,  lf.tipo)            AS natureza#(lf)  FROM `testesrh-508914`.quimica_aurora.lancamentos_financeiros lf#(lf)  LEFT JOIN `testesrh-508914`.quimica_aurora.plano_de_contas    pc#(lf)         ON lf.conta_id = pc.conta_id#(lf)  WHERE#(lf)    lf.status = 'confirmado'                        -- exclui lançamentos cancelados#(lf)    AND EXTRACT(YEAR  FROM lf.data_competencia) = 2025#(lf)    AND EXTRACT(MONTH FROM lf.data_competencia) IN (1, 2, 3)#(lf)    AND COALESCE(pc.grupo_dre, '') NOT IN (#(lf)          'Transferência entre Contas',#(lf)          'Adiantamentos (não-resultado)'#(lf)        )#(lf)),#(lf)-- =============================================================================#(lf)-- BLOCO 3 — AGRUPAMENTO POR MÊS E GRUPO DA DRE#(lf)-- =============================================================================#(lf)financeiro_mes AS (#(lf)  SELECT#(lf)    ano_mes,#(lf)    ano,#(lf)    mes,#(lf)    -- Deduções sobre Vendas (saída)#(lf)    SUM(CASE WHEN grupo_dre = 'Deduções sobre Vendas'#(lf)                  AND tipo = 'saida'#(lf)             THEN valor ELSE 0 END)                AS deducoes_vendas,#(lf)    -- Despesas Operacionais líquidas:#(lf)    SUM(CASE WHEN grupo_dre = 'Despesas Operacionais' AND tipo = 'saida'#(lf)             THEN  valor#(lf)             WHEN grupo_dre = 'Despesas Operacionais' AND tipo = 'entrada'#(lf)             THEN -valor   -- estorno comissão#(lf)             ELSE 0 END)                           AS despesas_operacionais,#(lf)    -- Despesas Financeiras (saída)#(lf)    SUM(CASE WHEN grupo_dre = 'Despesas Financeiras'#(lf)                  AND tipo = 'saida'#(lf)             THEN valor ELSE 0 END)                AS despesas_financeiras,#(lf)    -- Receitas Financeiras (entrada)#(lf)    SUM(CASE WHEN grupo_dre IN ('Receitas Financeiras', 'Despesas Financeiras')#(lf)                  AND tipo = 'entrada'#(lf)             THEN valor ELSE 0 END)                AS receitas_financeiras#(lf)  FROM lancamentos_classificados#(lf)  GROUP BY 1, 2, 3#(lf)),#(lf)-- =============================================================================#(lf)-- BLOCO 4 — DRE CONSOLIDADA POR COMPETÊNCIA#(lf)-- =============================================================================#(lf)dre AS (#(lf)  SELECT#(lf)    COALESCE(v.ano_mes, f.ano_mes)         AS ano_mes,#(lf)    COALESCE(v.ano,     f.ano)             AS ano,#(lf)    COALESCE(v.mes,     f.mes)             AS mes,#(lf)    -- (+) Receita Bruta de Vendas#(lf)    COALESCE(v.receita_bruta, 0)           AS receita_bruta,#(lf)    -- (-) Deduções sobre Vendas#(lf)    COALESCE(f.deducoes_vendas, 0)         AS deducoes_vendas,#(lf)    -- (=) Receita Líquida#(lf)    COALESCE(v.receita_bruta, 0)#(lf)      - COALESCE(f.deducoes_vendas, 0)     AS receita_liquida,#(lf)    -- (-) CMV#(lf)    COALESCE(v.cmv, 0)                     AS cmv,#(lf)    -- (=) Lucro Bruto#(lf)    COALESCE(v.receita_bruta, 0)#(lf)      - COALESCE(f.deducoes_vendas, 0)#(lf)      - COALESCE(v.cmv, 0)                 AS lucro_bruto,#(lf)    -- (-) Despesas Operacionais#(lf)    COALESCE(f.despesas_operacionais, 0)   AS despesas_operacionais,#(lf)    -- (-) Despesas Financeiras#(lf)    COALESCE(f.despesas_financeiras, 0)    AS despesas_financeiras,#(lf)    -- (+) Receitas Financeiras#(lf)    COALESCE(f.receitas_financeiras, 0)    AS receitas_financeiras,#(lf)    -- (=) Resultado do Período#(lf)    COALESCE(v.receita_bruta, 0)#(lf)      - COALESCE(f.deducoes_vendas, 0)#(lf)      - COALESCE(v.cmv, 0)#(lf)      - COALESCE(f.despesas_operacionais, 0)#(lf)      - COALESCE(f.despesas_financeiras, 0)#(lf)      + COALESCE(f.receitas_financeiras, 0) AS resultado_periodo#(lf)  FROM vendas v#(lf)  FULL OUTER JOIN financeiro_mes f#(lf)               ON v.ano_mes = f.ano_mes#(lf))#(lf)-- =============================================================================#(lf)-- RESULTADO FINAL — DRE Gerencial Mensal (Jan, Fev, Mar 2025)#(lf)-- =============================================================================#(lf)SELECT#(lf)  ano_mes                                          AS mes,#(lf)  ROUND(receita_bruta,          2)                 AS receita_bruta,#(lf)  ROUND(deducoes_vendas,        2) * -1            AS deducoes_sobre_vendas,#(lf)  ROUND(receita_liquida,        2)                 AS receita_liquida,#(lf)  ROUND(cmv,                    2) * -1            AS cmv,#(lf)  ROUND(lucro_bruto,            2)                 AS lucro_bruto,#(lf)  ROUND(despesas_operacionais,  2) * -1            AS despesas_operacionais,#(lf)  ROUND(despesas_financeiras,   2) * -1            AS despesas_financeiras,#(lf)  ROUND(receitas_financeiras,   2)                 AS receitas_financeiras,#(lf)  ROUND(resultado_periodo,      2)                 AS resultado_do_periodo#(lf)FROM dre#(lf)ORDER BY ano, mes", null, [EnableFolding=true]),
+				    #"Tipo Alterado" = Table.TransformColumnTypes(Fonte,{{"mes", type date}})
+				in
+				    #"Tipo Alterado"
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Table
+

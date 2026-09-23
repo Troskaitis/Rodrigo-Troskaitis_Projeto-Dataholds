@@ -1,0 +1,15 @@
+relationship 5c9fd59a-d937-47bd-9f95-f8f194edee92
+	joinOnDateBehavior: datePartOnly
+	fromColumn: f_DRE.mes
+	toColumn: LocalDateTable_26fc1f62-0c26-42a8-8099-811dd99153a4.Date
+
+relationship d20a1699-5ca7-3234-cc3b-96b54ad6af7e
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: d_Calendario.Date
+	toColumn: f_DRE.mes
+
+relationship 00ac98a0-bc87-3828-e19e-8fd89c1305b0
+	fromColumn: f_Despesas.mes
+	toColumn: d_Calendario.Date
+

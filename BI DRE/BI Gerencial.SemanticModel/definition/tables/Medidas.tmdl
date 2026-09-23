@@ -1,0 +1,626 @@
+table Medidas
+	lineageTag: 6ccaf0e0-8b3a-47cb-98bb-663dda918260
+
+	measure 'Receita Bruta' = SUM(f_DRE[receita_bruta])
+		formatString: "R$"\ #,##0.00;("R$"\ #,##0.00);"R$"\ 0.00
+		lineageTag: 789aa4a2-f5c1-4c73-a205-f72447bf4dff
+
+	measure 'Deduções sobre Vendas' = SUM(f_DRE[deducoes_sobre_vendas])
+		formatString: "R$"\ #,##0.00;("R$"\ #,##0.00);"R$"\ 0.00
+		lineageTag: 45695409-a3f6-436f-a059-39b67df5f260
+
+	measure 'Receita Líquida' = SUM(f_DRE[receita_liquida])
+		formatString: "R$"\ #,##0.00;("R$"\ #,##0.00);"R$"\ 0.00
+		lineageTag: f07ccf7a-28f8-423e-b27c-ea8cc795668f
+
+	measure CMV = SUM(f_DRE[cmv])
+		formatString: "R$"\ #,##0.00;("R$"\ #,##0.00);"R$"\ 0.00
+		lineageTag: 34ca98a0-428d-4b1d-b95d-f5910df0f0a1
+
+	measure 'Lucro Bruto' = SUM(f_DRE[lucro_bruto])
+		formatString: "R$"\ #,##0.00;("R$"\ #,##0.00);"R$"\ 0.00
+		lineageTag: 824c253d-7c32-47f3-92e8-46ec522d5808
+
+	measure 'Despesas Operacionais' = SUM(f_DRE[despesas_operacionais])
+		formatString: "R$"\ #,##0.00;("R$"\ #,##0.00);"R$"\ 0.00
+		lineageTag: 5c2bc073-1e20-43a6-b6e0-d0bd848b8a90
+
+	measure 'Despesas Financeiras' = SUM(f_DRE[despesas_financeiras])
+		formatString: "R$"\ #,##0.00;("R$"\ #,##0.00);"R$"\ 0.00
+		lineageTag: 86c450f0-e973-4f72-93ec-264405e35e89
+
+	measure 'Receitas Financeiras' = SUM(f_DRE[receitas_financeiras])
+		formatString: "R$"\ #,##0.00;("R$"\ #,##0.00);"R$"\ 0.00
+		lineageTag: d757539c-180d-43b0-9df0-16c6240c483d
+
+	measure 'Resultado do Período' = SUM(f_DRE[resultado_do_periodo])
+		formatString: "R$"\ #,##0.00;("R$"\ #,##0.00);"R$"\ 0.00
+		lineageTag: 039a6686-e57b-404b-b580-dfc015ffe711
+
+	measure 'Margem Bruta %' = DIVIDE([Lucro Bruto], [Receita Líquida], 0)
+		formatString: 0.0%
+		lineageTag: a3c333cb-471a-436a-be2b-a5eaed12c023
+
+	measure 'Margem Líquida %' = DIVIDE([Resultado do Período], [Receita Líquida], 0)
+		formatString: 0.0%
+		lineageTag: 454bfff0-856e-4228-9209-1a21125bf8e6
+
+	measure 'Margem CMV %' = DIVIDE([CMV], [Receita Líquida], 0)
+		formatString: 0.0%
+		lineageTag: 0935a0ef-10e6-4c0b-9de2-dbcb8123f99d
+
+	measure 'Receita Bruta MoM %' =
+			VAR MesAtual = [Receita Bruta]
+			VAR MesAnterior = CALCULATE([Receita Bruta], DATEADD(d_Calendario[Date], -1, MONTH))
+			RETURN
+			    IF(
+			        ISBLANK(MesAtual) || ISBLANK(MesAnterior) || MesAtual = 0 || MesAnterior = 0,
+			        BLANK(),
+			        DIVIDE(MesAtual - MesAnterior, ABS(MesAnterior), BLANK())
+			    )
+		formatString: 0.0%
+		lineageTag: e5785f87-9ff8-43d2-b003-9a738a1e5eb4
+
+	measure 'Resultado MoM %' =
+			VAR MesAtual = [Resultado do Período]
+			VAR TemDados = NOT(ISBLANK([Receita Bruta])) && [Receita Bruta] <> 0
+			VAR MesAnterior = CALCULATE([Resultado do Período], DATEADD(d_Calendario[Date], -1, MONTH))
+			RETURN
+			    IF(
+			        NOT(TemDados) || ISBLANK(MesAnterior) || MesAnterior = 0,
+			        BLANK(),
+			        DIVIDE(MesAtual - MesAnterior, ABS(MesAnterior), BLANK())
+			    )
+		formatString: 0.0%
+		lineageTag: 50385069-cedd-44d1-8608-cfa76def4313
+
+	measure 'Receita Bruta MoM R$' =
+			VAR MesAtual = [Receita Bruta]
+			VAR MesAnterior = CALCULATE([Receita Bruta], DATEADD(d_Calendario[Date], -1, MONTH))
+			RETURN
+			    IF(
+			        ISBLANK(MesAtual) || ISBLANK(MesAnterior) || MesAtual = 0,
+			        BLANK(),
+			        MesAtual - MesAnterior
+			    )
+		formatString: "R$"\ #,##0.00;("R$"\ #,##0.00);"R$"\ 0.00
+		lineageTag: 3a211849-5dff-4093-80e4-c8bbd188a217
+
+	measure 'Resultado MoM R$' =
+			VAR MesAtual = [Resultado do Período]
+			VAR TemDados = NOT(ISBLANK([Receita Bruta])) && [Receita Bruta] <> 0
+			VAR MesAnterior = CALCULATE([Resultado do Período], DATEADD(d_Calendario[Date], -1, MONTH))
+			RETURN
+			    IF(
+			        NOT(TemDados) || ISBLANK(MesAnterior),
+			        BLANK(),
+			        MesAtual - MesAnterior
+			    )
+		formatString: "R$"\ #,##0.00;("R$"\ #,##0.00);"R$"\ 0.00
+		lineageTag: f336de6c-45df-4e35-85b9-30f4100695a0
+
+	measure 'Total Despesas' = [Despesas Operacionais] + [Despesas Financeiras]
+		formatString: "R$"\ #,##0.00;("R$"\ #,##0.00);"R$"\ 0.00
+		lineageTag: 871bf52f-f7d4-4cc6-a68f-c882be06e4a4
+
+	measure 'Despesas Operacionais % Receita Líquida' = DIVIDE([Despesas Operacionais], [Receita Líquida], 0)
+		formatString: 0.0%
+		lineageTag: 7870fc9d-b0c3-4a90-bc5e-9fe4e92c637c
+
+	measure Painel1 =
+			VAR Quadro = SELECTEDVALUE(Painel[Medida])
+			RETURN
+			    SWITCH(TRUE(),
+			        Quadro = "(+) Receita Bruta de Vendas" || Quadro = "Receita Bruta", FORMAT([Receita Bruta], "R$ #,##0.00;(R$ #,##0.00);R$ 0.00"),
+			        Quadro = "(-) Deduções sobre Vendas" || Quadro = "Deduções sobre Vendas", FORMAT([Deduções sobre Vendas], "R$ #,##0.00;(R$ #,##0.00);R$ 0.00"),
+			        Quadro = "(=) Receita Líquida" || Quadro = "Receita Líquida", FORMAT([Receita Líquida], "R$ #,##0.00;(R$ #,##0.00);R$ 0.00"),
+			        Quadro = "(-) CMV" || Quadro = "CMV", FORMAT([CMV], "R$ #,##0.00;(R$ #,##0.00);R$ 0.00"),
+			        Quadro = "(=) Lucro Bruto" || Quadro = "Lucro Bruto", FORMAT([Lucro Bruto], "R$ #,##0.00;(R$ #,##0.00);R$ 0.00"),
+			        Quadro = "(-) Despesas Operacionais" || Quadro = "Despesas Operacionais", FORMAT([Despesas Operacionais], "R$ #,##0.00;(R$ #,##0.00);R$ 0.00"),
+			        Quadro = "(-) Despesas Financeiras" || Quadro = "Despesas Financeiras", FORMAT([Despesas Financeiras], "R$ #,##0.00;(R$ #,##0.00);R$ 0.00"),
+			        Quadro = "(+) Receitas Financeiras" || Quadro = "Receitas Financeiras", FORMAT([Receitas Financeiras], "R$ #,##0.00;(R$ #,##0.00);R$ 0.00"),
+			        Quadro = "(=) Resultado do Período" || Quadro = "Resultado do Período", FORMAT([Resultado do Período], "R$ #,##0.00;(R$ #,##0.00);R$ 0.00"),
+			        Quadro = "Margem Bruta %", FORMAT([Margem Bruta %], "0.0%"),
+			        Quadro = "Margem Líquida %", FORMAT([Margem Líquida %], "0.0%"),
+			        Quadro = "Margem CMV %", FORMAT([Margem CMV %], "0.0%"),
+			        Quadro = "Receita Bruta MoM %", FORMAT([Receita Bruta MoM %], "0.0%"),
+			        Quadro = "Resultado MoM %", FORMAT([Resultado MoM %], "0.0%"),
+			        BLANK()
+			    )
+		displayFolder: Painel
+		lineageTag: 3b1ee138-ca76-41ba-b331-45acdcfb0581
+
+	measure 'Painel Valor' =
+			VAR Quadro = SELECTEDVALUE(Painel[Medida])
+			RETURN
+			    SWITCH(TRUE(),
+			        Quadro = "(+) Receita Bruta de Vendas" || Quadro = "Receita Bruta", [Receita Bruta],
+			        Quadro = "(-) Deduções sobre Vendas" || Quadro = "Deduções sobre Vendas", [Deduções sobre Vendas],
+			        Quadro = "(=) Receita Líquida" || Quadro = "Receita Líquida", [Receita Líquida],
+			        Quadro = "(-) CMV" || Quadro = "CMV", [CMV],
+			        Quadro = "(=) Lucro Bruto" || Quadro = "Lucro Bruto", [Lucro Bruto],
+			        Quadro = "(-) Despesas Operacionais" || Quadro = "Despesas Operacionais", [Despesas Operacionais],
+			        Quadro = "(-) Despesas Financeiras" || Quadro = "Despesas Financeiras", [Despesas Financeiras],
+			        Quadro = "(+) Receitas Financeiras" || Quadro = "Receitas Financeiras", [Receitas Financeiras],
+			        Quadro = "(=) Resultado do Período" || Quadro = "Resultado do Período", [Resultado do Período],
+			        Quadro = "Margem Bruta %", [Margem Bruta %],
+			        Quadro = "Margem Líquida %", [Margem Líquida %],
+			        Quadro = "Margem CMV %", [Margem CMV %],
+			        Quadro = "Receita Bruta MoM %", [Receita Bruta MoM %],
+			        Quadro = "Resultado MoM %", [Resultado MoM %],
+			        BLANK()
+			    )
+		displayFolder: Painel
+		lineageTag: 2de2dc32-2563-4a3b-9595-acbec05d731e
+
+	measure Icones1 =
+			VAR Indicador = SELECTEDVALUE(Painel[Medida])
+			VAR Res = [Resultado do Período]
+			RETURN
+			    SWITCH(
+			        TRUE(),
+			        Indicador = "(=) Resultado do Período" && NOT(ISBLANK(Res)),
+			            IF(Res >= 0, 1, 2),
+			        BLANK()
+			    )
+		formatString: 0
+		displayFolder: Painel
+		lineageTag: abda95e8-99b7-4866-810a-4fe539d64571
+
+	measure 'DRE HTML' = ```
+			-- =========================================================================
+			-- 1. VALORES MENSAIS: JANEIRO
+			-- =========================================================================
+			VAR RB_Jan   = CALCULATE([Receita Bruta], MONTH(d_Calendario[Date]) = 1)
+			VAR DED_Jan  = CALCULATE(ABS([Deduções sobre Vendas]), MONTH(d_Calendario[Date]) = 1)
+			VAR Carga_Jan= DIVIDE(DED_Jan, RB_Jan, 0)
+			VAR RL_Jan   = CALCULATE([Receita Líquida], MONTH(d_Calendario[Date]) = 1)
+			VAR CMV_Jan  = CALCULATE(ABS([CMV]), MONTH(d_Calendario[Date]) = 1)
+			VAR MCMV_Jan = DIVIDE(CMV_Jan, RL_Jan, 0)
+			VAR LB_Jan   = CALCULATE([Lucro Bruto], MONTH(d_Calendario[Date]) = 1)
+			VAR MB_Jan   = DIVIDE(LB_Jan, RL_Jan, 0)
+			
+			VAR Sal_Jan  = CALCULATE(ABS(SUM(f_Despesas[valor])), MONTH(d_Calendario[Date]) = 1, f_Despesas[conta_id] = "4.01")
+			VAR Alug_Jan = CALCULATE(ABS(SUM(f_Despesas[valor])), MONTH(d_Calendario[Date]) = 1, f_Despesas[conta_id] = "4.02")
+			VAR Energ_Jan= CALCULATE(ABS(SUM(f_Despesas[valor])), MONTH(d_Calendario[Date]) = 1, f_Despesas[conta_id] = "4.03")
+			VAR Mkt_Jan  = CALCULATE(ABS(SUM(f_Despesas[valor])), MONTH(d_Calendario[Date]) = 1, f_Despesas[conta_id] = "4.04")
+			VAR Fret_Jan = CALCULATE(ABS(SUM(f_Despesas[valor])), MONTH(d_Calendario[Date]) = 1, f_Despesas[conta_id] = "4.05")
+			VAR Terc_Jan = CALCULATE(ABS(SUM(f_Despesas[valor])), MONTH(d_Calendario[Date]) = 1, f_Despesas[conta_id] = "4.06")
+			VAR DO_Jan   = CALCULATE(ABS([Despesas Operacionais]), MONTH(d_Calendario[Date]) = 1)
+			VAR EfiDO_Jan= DIVIDE(DO_Jan, RL_Jan, 0)
+			
+			VAR ResOp_Jan= LB_Jan - DO_Jan
+			VAR MOp_Jan  = DIVIDE(ResOp_Jan, RL_Jan, 0)
+			
+			VAR DF_Jan   = CALCULATE(ABS([Despesas Financeiras]), MONTH(d_Calendario[Date]) = 1)
+			VAR RF_Jan   = CALCULATE([Receitas Financeiras], MONTH(d_Calendario[Date]) = 1)
+			VAR ResFin_Jan = RF_Jan - DF_Jan
+			
+			VAR Res_Jan  = CALCULATE([Resultado do Período], MONTH(d_Calendario[Date]) = 1)
+			VAR ML_Jan   = DIVIDE(Res_Jan, RL_Jan, 0)
+			VAR PE_Jan   = DIVIDE(DO_Jan + DF_Jan - RF_Jan, MB_Jan, 0)
+			
+			-- =========================================================================
+			-- 2. VALORES MENSAIS: FEVEREIRO
+			-- =========================================================================
+			VAR RB_Fev   = CALCULATE([Receita Bruta], MONTH(d_Calendario[Date]) = 2)
+			VAR DED_Fev  = CALCULATE(ABS([Deduções sobre Vendas]), MONTH(d_Calendario[Date]) = 2)
+			VAR Carga_Fev= DIVIDE(DED_Fev, RB_Fev, 0)
+			VAR RL_Fev   = CALCULATE([Receita Líquida], MONTH(d_Calendario[Date]) = 2)
+			VAR CMV_Fev  = CALCULATE(ABS([CMV]), MONTH(d_Calendario[Date]) = 2)
+			VAR MCMV_Fev = DIVIDE(CMV_Fev, RL_Fev, 0)
+			VAR LB_Fev   = CALCULATE([Lucro Bruto], MONTH(d_Calendario[Date]) = 2)
+			VAR MB_Fev   = DIVIDE(LB_Fev, RL_Fev, 0)
+			
+			VAR Sal_Fev  = CALCULATE(ABS(SUM(f_Despesas[valor])), MONTH(d_Calendario[Date]) = 2, f_Despesas[conta_id] = "4.01")
+			VAR Alug_Fev = CALCULATE(ABS(SUM(f_Despesas[valor])), MONTH(d_Calendario[Date]) = 2, f_Despesas[conta_id] = "4.02")
+			VAR Energ_Fev= CALCULATE(ABS(SUM(f_Despesas[valor])), MONTH(d_Calendario[Date]) = 2, f_Despesas[conta_id] = "4.03")
+			VAR Mkt_Fev  = CALCULATE(ABS(SUM(f_Despesas[valor])), MONTH(d_Calendario[Date]) = 2, f_Despesas[conta_id] = "4.04")
+			VAR Fret_Fev = CALCULATE(ABS(SUM(f_Despesas[valor])), MONTH(d_Calendario[Date]) = 2, f_Despesas[conta_id] = "4.05")
+			VAR Terc_Fev = CALCULATE(ABS(SUM(f_Despesas[valor])), MONTH(d_Calendario[Date]) = 2, f_Despesas[conta_id] = "4.06")
+			VAR DO_Fev   = CALCULATE(ABS([Despesas Operacionais]), MONTH(d_Calendario[Date]) = 2)
+			VAR EfiDO_Fev= DIVIDE(DO_Fev, RL_Fev, 0)
+			
+			VAR ResOp_Fev= LB_Fev - DO_Fev
+			VAR MOp_Fev  = DIVIDE(ResOp_Fev, RL_Fev, 0)
+			
+			VAR DF_Fev   = CALCULATE(ABS([Despesas Financeiras]), MONTH(d_Calendario[Date]) = 2)
+			VAR RF_Fev   = CALCULATE([Receitas Financeiras], MONTH(d_Calendario[Date]) = 2)
+			VAR ResFin_Fev = RF_Fev - DF_Fev
+			
+			VAR Res_Fev  = CALCULATE([Resultado do Período], MONTH(d_Calendario[Date]) = 2)
+			VAR ML_Fev   = DIVIDE(Res_Fev, RL_Fev, 0)
+			VAR PE_Fev   = DIVIDE(DO_Fev + DF_Fev - RF_Fev, MB_Fev, 0)
+			VAR MoM_RB_Fev = DIVIDE(RB_Fev - RB_Jan, RB_Jan, 0)
+			VAR MoM_Res_Fev = Res_Fev - Res_Jan
+			
+			-- =========================================================================
+			-- 3. VALORES MENSAIS: MARÇO
+			-- =========================================================================
+			VAR RB_Mar   = CALCULATE([Receita Bruta], MONTH(d_Calendario[Date]) = 3)
+			VAR DED_Mar  = CALCULATE(ABS([Deduções sobre Vendas]), MONTH(d_Calendario[Date]) = 3)
+			VAR Carga_Mar= DIVIDE(DED_Mar, RB_Mar, 0)
+			VAR RL_Mar   = CALCULATE([Receita Líquida], MONTH(d_Calendario[Date]) = 3)
+			VAR CMV_Mar  = CALCULATE(ABS([CMV]), MONTH(d_Calendario[Date]) = 3)
+			VAR MCMV_Mar = DIVIDE(CMV_Mar, RL_Mar, 0)
+			VAR LB_Mar   = CALCULATE([Lucro Bruto], MONTH(d_Calendario[Date]) = 3)
+			VAR MB_Mar   = DIVIDE(LB_Mar, RL_Mar, 0)
+			
+			VAR Sal_Mar  = CALCULATE(ABS(SUM(f_Despesas[valor])), MONTH(d_Calendario[Date]) = 3, f_Despesas[conta_id] = "4.01")
+			VAR Alug_Mar = CALCULATE(ABS(SUM(f_Despesas[valor])), MONTH(d_Calendario[Date]) = 3, f_Despesas[conta_id] = "4.02")
+			VAR Energ_Mar= CALCULATE(ABS(SUM(f_Despesas[valor])), MONTH(d_Calendario[Date]) = 3, f_Despesas[conta_id] = "4.03")
+			VAR Mkt_Mar  = CALCULATE(ABS(SUM(f_Despesas[valor])), MONTH(d_Calendario[Date]) = 3, f_Despesas[conta_id] = "4.04")
+			VAR Fret_Mar = CALCULATE(ABS(SUM(f_Despesas[valor])), MONTH(d_Calendario[Date]) = 3, f_Despesas[conta_id] = "4.05")
+			VAR Terc_Mar = CALCULATE(ABS(SUM(f_Despesas[valor])), MONTH(d_Calendario[Date]) = 3, f_Despesas[conta_id] = "4.06")
+			VAR DO_Mar   = CALCULATE(ABS([Despesas Operacionais]), MONTH(d_Calendario[Date]) = 3)
+			VAR EfiDO_Mar= DIVIDE(DO_Mar, RL_Mar, 0)
+			
+			VAR ResOp_Mar= LB_Mar - DO_Mar
+			VAR MOp_Mar  = DIVIDE(ResOp_Mar, RL_Mar, 0)
+			
+			VAR DF_Mar   = CALCULATE(ABS([Despesas Financeiras]), MONTH(d_Calendario[Date]) = 3)
+			VAR RF_Mar   = CALCULATE([Receitas Financeiras], MONTH(d_Calendario[Date]) = 3)
+			VAR ResFin_Mar = RF_Mar - DF_Mar
+			
+			VAR Res_Mar  = CALCULATE([Resultado do Período], MONTH(d_Calendario[Date]) = 3)
+			VAR ML_Mar   = DIVIDE(Res_Mar, RL_Mar, 0)
+			VAR PE_Mar   = DIVIDE(DO_Mar + DF_Mar - RF_Mar, MB_Mar, 0)
+			VAR MoM_RB_Mar = DIVIDE(RB_Mar - RB_Fev, RB_Fev, 0)
+			VAR MoM_Res_Mar = Res_Mar - Res_Fev
+			
+			-- =========================================================================
+			-- 4. TOTAIS DO TRIMESTRE (1T2025)
+			-- =========================================================================
+			VAR RB_Tot   = RB_Jan + RB_Fev + RB_Mar
+			VAR DED_Tot  = DED_Jan + DED_Fev + DED_Mar
+			VAR Carga_Tot= DIVIDE(DED_Tot, RB_Tot, 0)
+			VAR RL_Tot   = RL_Jan + RL_Fev + RL_Mar
+			VAR CMV_Tot  = CMV_Jan + CMV_Fev + CMV_Mar
+			VAR MCMV_Tot = DIVIDE(CMV_Tot, RL_Tot, 0)
+			VAR LB_Tot   = LB_Jan + LB_Fev + LB_Mar
+			VAR MB_Tot   = DIVIDE(LB_Tot, RL_Tot, 0)
+			
+			VAR Sal_Tot  = Sal_Jan + Sal_Fev + Sal_Mar
+			VAR Alug_Tot = Alug_Jan + Alug_Fev + Alug_Mar
+			VAR Energ_Tot= Energ_Jan + Energ_Fev + Energ_Mar
+			VAR Mkt_Tot  = Mkt_Jan + Mkt_Fev + Mkt_Mar
+			VAR Fret_Tot = Fret_Jan + Fret_Fev + Fret_Mar
+			VAR Terc_Tot = Terc_Jan + Terc_Fev + Terc_Mar
+			VAR DO_Tot   = DO_Jan + DO_Fev + DO_Mar
+			VAR EfiDO_Tot= DIVIDE(DO_Tot, RL_Tot, 0)
+			
+			VAR ResOp_Tot= LB_Tot - DO_Tot
+			VAR MOp_Tot  = DIVIDE(ResOp_Tot, RL_Tot, 0)
+			
+			VAR DF_Tot   = DF_Jan + DF_Fev + DF_Mar
+			VAR RF_Tot   = RF_Jan + RF_Fev + RF_Mar
+			VAR ResFin_Tot = RF_Tot - DF_Tot
+			
+			VAR Res_Tot  = Res_Jan + Res_Fev + Res_Mar
+			VAR ML_Tot   = DIVIDE(Res_Tot, RL_Tot, 0)
+			VAR PE_Tot   = DIVIDE(DO_Tot + DF_Tot - RF_Tot, MB_Tot, 0)
+			
+			-- =========================================================================
+			-- 5. ANÁLISE VERTICAL (AV % SOBRE A RECEITA LÍQUIDA DO 1T)
+			-- =========================================================================
+			VAR AV_RB    = DIVIDE(RB_Tot, RL_Tot, 0)
+			VAR AV_DED   = DIVIDE(DED_Tot, RL_Tot, 0)
+			VAR AV_RL    = 1.0
+			VAR AV_CMV   = DIVIDE(CMV_Tot, RL_Tot, 0)
+			VAR AV_LB    = DIVIDE(LB_Tot, RL_Tot, 0)
+			VAR AV_Sal   = DIVIDE(Sal_Tot, RL_Tot, 0)
+			VAR AV_Alug  = DIVIDE(Alug_Tot, RL_Tot, 0)
+			VAR AV_Energ = DIVIDE(Energ_Tot, RL_Tot, 0)
+			VAR AV_Mkt   = DIVIDE(Mkt_Tot, RL_Tot, 0)
+			VAR AV_Fret  = DIVIDE(Fret_Tot, RL_Tot, 0)
+			VAR AV_Terc  = DIVIDE(Terc_Tot, RL_Tot, 0)
+			VAR AV_DO    = DIVIDE(DO_Tot, RL_Tot, 0)
+			VAR AV_ResOp = DIVIDE(ResOp_Tot, RL_Tot, 0)
+			VAR AV_DF    = DIVIDE(DF_Tot, RL_Tot, 0)
+			VAR AV_RF    = DIVIDE(RF_Tot, RL_Tot, 0)
+			VAR AV_ResFin= DIVIDE(ResFin_Tot, RL_Tot, 0)
+			VAR AV_Res   = DIVIDE(Res_Tot, RL_Tot, 0)
+			
+			RETURN
+			"<div style='font-family: Segoe UI, -apple-system, BlinkMacSystemFont, Roboto, sans-serif; background: #F8FAFC; border: 1px solid #CBD5E1; border-radius: 8px; padding: 8px 14px; color: #1E293B; width: 100%; height: 100%; min-height: 100%; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.06);'>" &
+			  
+			  -- CABEÇALHO SUPERIOR COM DATA ATUAL (TEMA EXECUTIVO CLARO & EQUILIBRADO)
+			  "<div style='display: flex; justify-content: space-between; align-items: center; padding-bottom: 6px; margin-bottom: 4px; border-bottom: 1px solid #CBD5E1; flex-shrink: 0;'>" &
+			    "<div style='display: flex; align-items: center; gap: 8px;'>" &
+			      "<span style='font-size: 11.5px; font-weight: 700; color: #0F172A; letter-spacing: 0.2px;'>Demonstração do Resultado do Exercício (DRE)</span>" &
+			    "</div>" &
+			    "<div style='display: flex; align-items: center; gap: 6px; font-size: 9.5px; color: #475569;'>" &
+			      "<span style='background: #F1F5F9; color: #64748B; padding: 2px 7px; border-radius: 4px; border: 1px solid #E2E8F0; font-weight: 500;'>" & FORMAT(NOW(), "DD/MM/YYYY HH:mm") & "</span>" &
+			      "<span style='background: #E2E8F0; color: #334155; padding: 2px 7px; border-radius: 4px; border: 1px solid #CBD5E1; font-weight: 600;'>1T/2025</span>" &
+			      "<span style='background: #DCFCE7; color: #15803D; padding: 2px 7px; border-radius: 4px; border: 1px solid #BBF7D0; font-weight: 600;'>Regime de Competência</span>" &
+			    "</div>" &
+			  "</div>" &
+			
+			
+			  "<table style='width: 100%; height: 100%; border-collapse: collapse; font-size: 11px; line-height: 1.35; table-layout: fixed;'>" &
+			    "<thead>" &
+			      "<tr style='background: #0F172A; border-bottom: 2px solid #0284C7; text-transform: uppercase; font-size: 9.5px; color: #F8FAFC; font-weight: 700; letter-spacing: 0.5px;'>" &
+			        "<th style='text-align: left; padding: 6px 8px; width: 38%; color: #FFFFFF;'>Linha da DRE (Regime de Competência)</th>" &
+			        "<th style='text-align: right; padding: 6px 8px; width: 12.5%; color: #F1F5F9;'>Jan/2025</th>" &
+			        "<th style='text-align: right; padding: 6px 8px; width: 12.5%; color: #F1F5F9;'>Fev/2025</th>" &
+			        "<th style='text-align: right; padding: 6px 8px; width: 12.5%; color: #F1F5F9;'>Mar/2025</th>" &
+			        "<th style='text-align: right; padding: 6px 8px; width: 14.5%; color: #38BDF8;'>Total 1T</th>" &
+			        "<th style='text-align: right; padding: 6px 8px; width: 10%; color: #94A3B8;'>AV %</th>" &
+			      "</tr>" &
+			    "</thead>" &
+			    "<tbody>" &
+			      
+			      -- RECEITA BRUTA
+			      "<tr style='border-bottom: 1px solid #E2E8F0;'>" &
+			        "<td style='padding: 3.5px 8px; font-weight: 600; color: #0F172A;'><b>(+) Receita Bruta de Vendas</b></td>" &
+			        "<td style='text-align: right; padding: 3.5px 8px; color: #0F172A;'>" & FORMAT(RB_Jan, "R$ #,##0.00") & "</td>" &
+			        "<td style='text-align: right; padding: 3.5px 8px; color: #0F172A;'>" & FORMAT(RB_Fev, "R$ #,##0.00") & "</td>" &
+			        "<td style='text-align: right; padding: 3.5px 8px; color: #0F172A;'>" & FORMAT(RB_Mar, "R$ #,##0.00") & "</td>" &
+			        "<td style='text-align: right; padding: 3.5px 8px; font-weight: 700; color: #0284C7;'>" & FORMAT(RB_Tot, "R$ #,##0.00") & "</td>" &
+			        "<td style='text-align: right; padding: 3.5px 8px; color: #64748B;'>" & FORMAT(AV_RB, "0.0%") & "</td>" &
+			      "</tr>" &
+			
+			      -- DEDUÇÕES
+			      "<tr style='border-bottom: 1px solid #E2E8F0; color: #475569;'>" &
+			        "<td style='padding: 3px 8px; padding-left: 18px;'>(-) Deduções sobre Vendas (Impostos)</td>" &
+			        "<td style='text-align: right; padding: 3px 8px; color: #DC2626;'>(" & FORMAT(DED_Jan, "R$ #,##0.00") & ")</td>" &
+			        "<td style='text-align: right; padding: 3px 8px; color: #DC2626;'>(" & FORMAT(DED_Fev, "R$ #,##0.00") & ")</td>" &
+			        "<td style='text-align: right; padding: 3px 8px; color: #DC2626;'>(" & FORMAT(DED_Mar, "R$ #,##0.00") & ")</td>" &
+			        "<td style='text-align: right; padding: 3px 8px; font-weight: 600; color: #DC2626;'>(" & FORMAT(DED_Tot, "R$ #,##0.00") & ")</td>" &
+			        "<td style='text-align: right; padding: 3px 8px; color: #64748B;'>-" & FORMAT(AV_DED, "0.0%") & "</td>" &
+			      "</tr>" &
+			
+			      -- CARGA TRIBUTÁRIA %
+			      "<tr style='border-bottom: 1px solid #E2E8F0; color: #64748B; font-size: 10px;'>" &
+			        "<td style='padding: 2px 8px; padding-left: 28px; font-style: italic;'>% Carga Tributária Efetiva (s/ RB)</td>" &
+			        "<td style='text-align: right; padding: 2px 8px;'>" & FORMAT(Carga_Jan, "0.0%") & "</td>" &
+			        "<td style='text-align: right; padding: 2px 8px;'>" & FORMAT(Carga_Fev, "0.0%") & "</td>" &
+			        "<td style='text-align: right; padding: 2px 8px;'>" & FORMAT(Carga_Mar, "0.0%") & "</td>" &
+			        "<td style='text-align: right; padding: 2px 8px;'>" & FORMAT(Carga_Tot, "0.0%") & "</td>" &
+			        "<td style='text-align: right; padding: 2px 8px;'>-</td>" &
+			      "</tr>" &
+			
+			      -- RECEITA LÍQUIDA (SUBTOTAL)
+			      "<tr style='background: #EBF5FF; border-top: 1px solid #93C5FD; border-bottom: 1px solid #93C5FD; font-weight: 700; color: #1E3A8A;'>" &
+			        "<td style='padding: 4.5px 8px;'><b>(=) RECEITA OPERACIONAL LÍQUIDA</b></td>" &
+			        "<td style='text-align: right; padding: 4.5px 8px;'>" & FORMAT(RL_Jan, "R$ #,##0.00") & "</td>" &
+			        "<td style='text-align: right; padding: 4.5px 8px;'>" & FORMAT(RL_Fev, "R$ #,##0.00") & "</td>" &
+			        "<td style='text-align: right; padding: 4.5px 8px;'>" & FORMAT(RL_Mar, "R$ #,##0.00") & "</td>" &
+			        "<td style='text-align: right; padding: 4.5px 8px; color: #0284C7; font-weight: 800;'>" & FORMAT(RL_Tot, "R$ #,##0.00") & "</td>" &
+			        "<td style='text-align: right; padding: 4.5px 8px; color: #0284C7;'>100.0%</td>" &
+			      "</tr>" &
+			
+			      -- CMV
+			      "<tr style='border-bottom: 1px solid #E2E8F0; color: #475569;'>" &
+			        "<td style='padding: 3px 8px; padding-left: 18px;'>(-) Custo das Mercadorias Vendidas (CMV)</td>" &
+			        "<td style='text-align: right; padding: 3px 8px; color: #DC2626;'>(" & FORMAT(CMV_Jan, "R$ #,##0.00") & ")</td>" &
+			        "<td style='text-align: right; padding: 3px 8px; color: #DC2626;'>(" & FORMAT(CMV_Fev, "R$ #,##0.00") & ")</td>" &
+			        "<td style='text-align: right; padding: 3px 8px; color: #DC2626;'>(" & FORMAT(CMV_Mar, "R$ #,##0.00") & ")</td>" &
+			        "<td style='text-align: right; padding: 3px 8px; font-weight: 600; color: #DC2626;'>(" & FORMAT(CMV_Tot, "R$ #,##0.00") & ")</td>" &
+			        "<td style='text-align: right; padding: 3px 8px; color: #64748B;'>-" & FORMAT(AV_CMV, "0.0%") & "</td>" &
+			      "</tr>" &
+			
+			      -- MARGEM CMV %
+			      "<tr style='border-bottom: 1px solid #E2E8F0; color: #64748B; font-size: 10px;'>" &
+			        "<td style='padding: 2px 8px; padding-left: 28px; font-style: italic;'>% Absorção CMV (CMV / Rec. Líquida)</td>" &
+			        "<td style='text-align: right; padding: 2px 8px;'>" & FORMAT(MCMV_Jan, "0.0%") & "</td>" &
+			        "<td style='text-align: right; padding: 2px 8px;'>" & FORMAT(MCMV_Fev, "0.0%") & "</td>" &
+			        "<td style='text-align: right; padding: 2px 8px; color: #059669; font-weight: 600;'>" & FORMAT(MCMV_Mar, "0.0%") & "</td>" &
+			        "<td style='text-align: right; padding: 2px 8px;'>" & FORMAT(MCMV_Tot, "0.0%") & "</td>" &
+			        "<td style='text-align: right; padding: 2px 8px;'>-</td>" &
+			      "</tr>" &
+			
+			      -- LUCRO BRUTO (SUBTOTAL)
+			      "<tr style='background: #ECFDF5; border-top: 1px solid #86EFAC; border-bottom: 1px solid #86EFAC; font-weight: 700; color: #065F46;'>" &
+			        "<td style='padding: 4.5px 8px;'><b>(=) LUCRO BRUTO</b></td>" &
+			        "<td style='text-align: right; padding: 4.5px 8px; color: #047857;'>" & FORMAT(LB_Jan, "R$ #,##0.00") & "</td>" &
+			        "<td style='text-align: right; padding: 4.5px 8px; color: #047857;'>" & FORMAT(LB_Fev, "R$ #,##0.00") & "</td>" &
+			        "<td style='text-align: right; padding: 4.5px 8px; color: #047857;'>" & FORMAT(LB_Mar, "R$ #,##0.00") & "</td>" &
+			        "<td style='text-align: right; padding: 4.5px 8px; color: #047857; font-weight: 800;'>" & FORMAT(LB_Tot, "R$ #,##0.00") & "</td>" &
+			        "<td style='text-align: right; padding: 4.5px 8px; color: #047857;'>" & FORMAT(AV_LB, "0.0%") & "</td>" &
+			      "</tr>" &
+			
+			      -- MARGEM BRUTA %
+			      "<tr style='border-bottom: 1px solid #E2E8F0; color: #64748B; font-size: 10px;'>" &
+			        "<td style='padding: 2.5px 8px; padding-left: 18px; font-style: italic;'>Margem Bruta %</td>" &
+			        "<td style='text-align: right; padding: 2.5px 8px;'>" & FORMAT(MB_Jan, "0.0%") & "</td>" &
+			        "<td style='text-align: right; padding: 2.5px 8px;'>" & FORMAT(MB_Fev, "0.0%") & "</td>" &
+			        "<td style='text-align: right; padding: 2.5px 8px; font-weight: 700; color: #059669;'>" & FORMAT(MB_Mar, "0.0%") & "</td>" &
+			        "<td style='text-align: right; padding: 2.5px 8px; font-weight: 700; color: #059669;'>" & FORMAT(MB_Tot, "0.0%") & "</td>" &
+			        "<td style='text-align: right; padding: 2.5px 8px;'>-</td>" &
+			      "</tr>" &
+			
+			      -- CABEÇALHO DESPESAS OPERACIONAIS
+			      "<tr style='background: #E2E8F0; border-bottom: 1px solid #CBD5E1;'>" &
+			        "<td colspan='6' style='padding: 4px 8px; font-weight: 700; color: #1E3A8A; font-size: 9.5px; text-transform: uppercase;'><b>(-) DESPESAS OPERACIONAIS (SG&A)</b></td>" &
+			      "</tr>" &
+			
+			      -- CONTAS DE DESPESAS OPERACIONAIS
+			      "<tr style='border-bottom: 1px solid #E2E8F0; color: #475569; font-size: 10px;'>" &
+			        "<td style='padding: 2.5px 8px; padding-left: 22px;'>• Salários e Encargos (4.01)</td>" &
+			        "<td style='text-align: right; padding: 2.5px 8px; color: #DC2626;'>(" & FORMAT(Sal_Jan, "R$ #,##0.00") & ")</td>" &
+			        "<td style='text-align: right; padding: 2.5px 8px; color: #DC2626;'>(" & FORMAT(Sal_Fev, "R$ #,##0.00") & ")</td>" &
+			        "<td style='text-align: right; padding: 2.5px 8px; color: #DC2626;'>(" & FORMAT(Sal_Mar, "R$ #,##0.00") & ")</td>" &
+			        "<td style='text-align: right; padding: 2.5px 8px; color: #DC2626;'>(" & FORMAT(Sal_Tot, "R$ #,##0.00") & ")</td>" &
+			        "<td style='text-align: right; padding: 2.5px 8px; color: #DC2626;'>-" & FORMAT(AV_Sal, "0.0%") & "</td>" &
+			      "</tr>" &
+			
+			      "<tr style='border-bottom: 1px solid #E2E8F0; color: #475569; font-size: 10px;'>" &
+			        "<td style='padding: 2.5px 8px; padding-left: 22px;'>• Aluguel e Condomínio (4.02)</td>" &
+			        "<td style='text-align: right; padding: 2.5px 8px; color: #DC2626;'>(" & FORMAT(Alug_Jan, "R$ #,##0.00") & ")</td>" &
+			        "<td style='text-align: right; padding: 2.5px 8px; color: #DC2626;'>(" & FORMAT(Alug_Fev, "R$ #,##0.00") & ")</td>" &
+			        "<td style='text-align: right; padding: 2.5px 8px; color: #DC2626;'>(" & FORMAT(Alug_Mar, "R$ #,##0.00") & ")</td>" &
+			        "<td style='text-align: right; padding: 2.5px 8px; color: #DC2626;'>(" & FORMAT(Alug_Tot, "R$ #,##0.00") & ")</td>" &
+			        "<td style='text-align: right; padding: 2.5px 8px; color: #DC2626;'>-" & FORMAT(AV_Alug, "0.0%") & "</td>" &
+			      "</tr>" &
+			
+			      "<tr style='border-bottom: 1px solid #E2E8F0; color: #475569; font-size: 10px;'>" &
+			        "<td style='padding: 2.5px 8px; padding-left: 22px;'>• Energia e Utilidades (4.03)</td>" &
+			        "<td style='text-align: right; padding: 2.5px 8px; color: #DC2626;'>(" & FORMAT(Energ_Jan, "R$ #,##0.00") & ")</td>" &
+			        "<td style='text-align: right; padding: 2.5px 8px; color: #DC2626;'>(" & FORMAT(Energ_Fev, "R$ #,##0.00") & ")</td>" &
+			        "<td style='text-align: right; padding: 2.5px 8px; color: #DC2626;'>(" & FORMAT(Energ_Mar, "R$ #,##0.00") & ")</td>" &
+			        "<td style='text-align: right; padding: 2.5px 8px; color: #DC2626;'>(" & FORMAT(Energ_Tot, "R$ #,##0.00") & ")</td>" &
+			        "<td style='text-align: right; padding: 2.5px 8px; color: #DC2626;'>-" & FORMAT(AV_Energ, "0.0%") & "</td>" &
+			      "</tr>" &
+			
+			      "<tr style='border-bottom: 1px solid #E2E8F0; color: #475569; font-size: 10px;'>" &
+			        "<td style='padding: 2.5px 8px; padding-left: 22px;'>• Marketing e Comercial (4.04)</td>" &
+			        "<td style='text-align: right; padding: 2.5px 8px; color: #DC2626;'>(" & FORMAT(Mkt_Jan, "R$ #,##0.00") & ")</td>" &
+			        "<td style='text-align: right; padding: 2.5px 8px; color: #DC2626;'>(" & FORMAT(Mkt_Fev, "R$ #,##0.00") & ")</td>" &
+			        "<td style='text-align: right; padding: 2.5px 8px; color: #DC2626;'>(" & FORMAT(Mkt_Mar, "R$ #,##0.00") & ")</td>" &
+			        "<td style='text-align: right; padding: 2.5px 8px; color: #DC2626;'>(" & FORMAT(Mkt_Tot, "R$ #,##0.00") & ")</td>" &
+			        "<td style='text-align: right; padding: 2.5px 8px; color: #DC2626;'>-" & FORMAT(AV_Mkt, "0.0%") & "</td>" &
+			      "</tr>" &
+			
+			      "<tr style='border-bottom: 1px solid #E2E8F0; color: #475569; font-size: 10px;'>" &
+			        "<td style='padding: 2.5px 8px; padding-left: 22px;'>• Fretes e Logística (4.05)</td>" &
+			        "<td style='text-align: right; padding: 2.5px 8px; color: #DC2626;'>(" & FORMAT(Fret_Jan, "R$ #,##0.00") & ")</td>" &
+			        "<td style='text-align: right; padding: 2.5px 8px; color: #DC2626;'>(" & FORMAT(Fret_Fev, "R$ #,##0.00") & ")</td>" &
+			        "<td style='text-align: right; padding: 2.5px 8px; color: #DC2626;'>(" & FORMAT(Fret_Mar, "R$ #,##0.00") & ")</td>" &
+			        "<td style='text-align: right; padding: 2.5px 8px; color: #DC2626;'>(" & FORMAT(Fret_Tot, "R$ #,##0.00") & ")</td>" &
+			        "<td style='text-align: right; padding: 2.5px 8px; color: #DC2626;'>-" & FORMAT(AV_Fret, "0.0%") & "</td>" &
+			      "</tr>" &
+			
+			      "<tr style='border-bottom: 1px solid #E2E8F0; color: #475569; font-size: 10px;'>" &
+			        "<td style='padding: 2.5px 8px; padding-left: 22px;'>• Serviços de Terceiros (4.06)</td>" &
+			        "<td style='text-align: right; padding: 2.5px 8px; color: #DC2626;'>(" & FORMAT(Terc_Jan, "R$ #,##0.00") & ")</td>" &
+			        "<td style='text-align: right; padding: 2.5px 8px; color: #DC2626;'>(" & FORMAT(Terc_Fev, "R$ #,##0.00") & ")</td>" &
+			        "<td style='text-align: right; padding: 2.5px 8px; color: #DC2626;'>(" & FORMAT(Terc_Mar, "R$ #,##0.00") & ")</td>" &
+			        "<td style='text-align: right; padding: 2.5px 8px; color: #DC2626;'>(" & FORMAT(Terc_Tot, "R$ #,##0.00") & ")</td>" &
+			        "<td style='text-align: right; padding: 2.5px 8px; color: #DC2626;'>-" & FORMAT(AV_Terc, "0.0%") & "</td>" &
+			      "</tr>" &
+			
+			      -- SUBTOTAL DESPESAS OPERACIONAIS
+			      "<tr style='border-bottom: 1px solid #CBD5E1; background: #F1F5F9; color: #1E293B; font-weight: 600;'>" &
+			        "<td style='padding: 3.5px 8px; padding-left: 14px;'>Total Despesas Operacionais</td>" &
+			        "<td style='text-align: right; padding: 3.5px 8px; color: #DC2626;'>(" & FORMAT(DO_Jan, "R$ #,##0.00") & ")</td>" &
+			        "<td style='text-align: right; padding: 3.5px 8px; color: #DC2626;'>(" & FORMAT(DO_Fev, "R$ #,##0.00") & ")</td>" &
+			        "<td style='text-align: right; padding: 3.5px 8px; color: #DC2626;'>(" & FORMAT(DO_Mar, "R$ #,##0.00") & ")</td>" &
+			        "<td style='text-align: right; padding: 3.5px 8px; color: #DC2626;'>(" & FORMAT(DO_Tot, "R$ #,##0.00") & ")</td>" &
+			        "<td style='text-align: right; padding: 3.5px 8px; color: #DC2626;'>-" & FORMAT(AV_DO, "0.0%") & "</td>" &
+			      "</tr>" &
+			
+			      -- EFICIÊNCIA SG&A %
+			      "<tr style='border-bottom: 1px solid #E2E8F0; color: #64748B; font-size: 10px;'>" &
+			        "<td style='padding: 2px 8px; padding-left: 28px; font-style: italic;'>% Despesas Op. / Rec. Líquida</td>" &
+			        "<td style='text-align: right; padding: 2px 8px;'>" & FORMAT(EfiDO_Jan, "0.0%") & "</td>" &
+			        "<td style='text-align: right; padding: 2px 8px;'>" & FORMAT(EfiDO_Fev, "0.0%") & "</td>" &
+			        "<td style='text-align: right; padding: 2px 8px; color: #059669; font-weight: 600;'>" & FORMAT(EfiDO_Mar, "0.0%") & "</td>" &
+			        "<td style='text-align: right; padding: 2px 8px;'>" & FORMAT(EfiDO_Tot, "0.0%") & "</td>" &
+			        "<td style='text-align: right; padding: 2px 8px;'>-</td>" &
+			      "</tr>" &
+			
+			      -- RESULTADO OPERACIONAL (EBITDA / LAJIR)
+			      "<tr style='background: #FEF9C3; border-top: 1px solid #FACC15; border-bottom: 1px solid #FACC15; font-weight: 700; color: #713F12;'>" &
+			        "<td style='padding: 4.5px 8px;'><b>(=) RESULTADO OPERACIONAL (EBITDA)</b></td>" &
+			        "<td style='text-align: right; padding: 4.5px 8px; color: " & IF(ResOp_Jan >= 0, "#15803D", "#DC2626") & ";'>" & FORMAT(ResOp_Jan, "R$ #,##0.00;(R$ #,##0.00);R$ 0.00") & "</td>" &
+			        "<td style='text-align: right; padding: 4.5px 8px; color: " & IF(ResOp_Fev >= 0, "#15803D", "#DC2626") & ";'>" & FORMAT(ResOp_Fev, "R$ #,##0.00;(R$ #,##0.00);R$ 0.00") & "</td>" &
+			        "<td style='text-align: right; padding: 4.5px 8px; color: " & IF(ResOp_Mar >= 0, "#15803D", "#DC2626") & ";'>" & FORMAT(ResOp_Mar, "R$ #,##0.00;(R$ #,##0.00);R$ 0.00") & "</td>" &
+			        "<td style='text-align: right; padding: 4.5px 8px; color: " & IF(ResOp_Tot >= 0, "#15803D", "#DC2626") & ";'>" & FORMAT(ResOp_Tot, "R$ #,##0.00;(R$ #,##0.00);R$ 0.00") & "</td>" &
+			        "<td style='text-align: right; padding: 4.5px 8px; color: #92400E;'>" & FORMAT(AV_ResOp, "0.0%") & "</td>" &
+			      "</tr>" &
+			
+			      -- MARGEM OPERACIONAL %
+			      "<tr style='border-bottom: 1px solid #E2E8F0; color: #64748B; font-size: 10px;'>" &
+			        "<td style='padding: 2px 8px; padding-left: 18px; font-style: italic;'>Margem Operacional % (EBITDA Margin)</td>" &
+			        "<td style='text-align: right; padding: 2px 8px; color: #DC2626;'>" & FORMAT(MOp_Jan, "0.0%") & "</td>" &
+			        "<td style='text-align: right; padding: 2px 8px; color: #DC2626;'>" & FORMAT(MOp_Fev, "0.0%") & "</td>" &
+			        "<td style='text-align: right; padding: 2px 8px; color: #059669; font-weight: 700;'>" & FORMAT(MOp_Mar, "+0.0%") & "</td>" &
+			        "<td style='text-align: right; padding: 2px 8px; color: #DC2626;'>" & FORMAT(MOp_Tot, "0.0%") & "</td>" &
+			        "<td style='text-align: right; padding: 2px 8px;'>-</td>" &
+			      "</tr>" &
+			
+			      -- RESULTADO FINANCEIRO (SEÇÃO)
+			      "<tr style='border-bottom: 1px solid #E2E8F0; color: #475569; font-size: 10px;'>" &
+			        "<td style='padding: 2.5px 8px; padding-left: 18px;'>(-) Despesas Financeiras (Tarifas e Juros)</td>" &
+			        "<td style='text-align: right; padding: 2.5px 8px; color: #DC2626;'>(" & FORMAT(DF_Jan, "R$ #,##0.00") & ")</td>" &
+			        "<td style='text-align: right; padding: 2.5px 8px; color: #DC2626;'>(" & FORMAT(DF_Fev, "R$ #,##0.00") & ")</td>" &
+			        "<td style='text-align: right; padding: 2.5px 8px; color: #DC2626;'>(" & FORMAT(DF_Mar, "R$ #,##0.00") & ")</td>" &
+			        "<td style='text-align: right; padding: 2.5px 8px; color: #DC2626;'>(" & FORMAT(DF_Tot, "R$ #,##0.00") & ")</td>" &
+			        "<td style='text-align: right; padding: 2.5px 8px; color: #DC2626;'>-" & FORMAT(AV_DF, "0.0%") & "</td>" &
+			      "</tr>" &
+			
+			      "<tr style='border-bottom: 1px solid #E2E8F0; color: #475569; font-size: 10px;'>" &
+			        "<td style='padding: 2.5px 8px; padding-left: 18px;'>(+) Receitas Financeiras (Rendimentos CDB)</td>" &
+			        "<td style='text-align: right; padding: 2.5px 8px; color: #15803D;'>" & FORMAT(RF_Jan, "R$ #,##0.00") & "</td>" &
+			        "<td style='text-align: right; padding: 2.5px 8px; color: #15803D;'>" & FORMAT(RF_Fev, "R$ #,##0.00") & "</td>" &
+			        "<td style='text-align: right; padding: 2.5px 8px; color: #15803D;'>" & FORMAT(RF_Mar, "R$ #,##0.00") & "</td>" &
+			        "<td style='text-align: right; padding: 2.5px 8px; color: #15803D;'>" & FORMAT(RF_Tot, "R$ #,##0.00") & "</td>" &
+			        "<td style='text-align: right; padding: 2.5px 8px; color: #15803D;'>+" & FORMAT(AV_RF, "0.0%") & "</td>" &
+			      "</tr>" &
+			
+			      "<tr style='border-bottom: 1px solid #CBD5E1; color: #64748B; font-size: 10px;'>" &
+			        "<td style='padding: 2.5px 8px; padding-left: 18px; font-style: italic;'>(=) Resultado Financeiro Líquido</td>" &
+			        "<td style='text-align: right; padding: 2.5px 8px; color: #DC2626;'>(" & FORMAT(ABS(ResFin_Jan), "R$ #,##0.00") & ")</td>" &
+			        "<td style='text-align: right; padding: 2.5px 8px; color: #DC2626;'>(" & FORMAT(ABS(ResFin_Fev), "R$ #,##0.00") & ")</td>" &
+			        "<td style='text-align: right; padding: 2.5px 8px; color: #DC2626;'>(" & FORMAT(ABS(ResFin_Mar), "R$ #,##0.00") & ")</td>" &
+			        "<td style='text-align: right; padding: 2.5px 8px; color: #DC2626;'>(" & FORMAT(ABS(ResFin_Tot), "R$ #,##0.00") & ")</td>" &
+			        "<td style='text-align: right; padding: 2.5px 8px; color: #DC2626;'>-" & FORMAT(ABS(AV_ResFin), "0.0%") & "</td>" &
+			      "</tr>" &
+			
+			      -- RESULTADO LÍQUIDO DO PERÍODO (DESTAQUE FINAL)
+			      "<tr style='background: #EBF5FF; border-top: 2px solid #0284C7; border-bottom: 2px solid #0284C7; font-size: 12px; font-weight: 800; color: #0F172A;'>" &
+			        "<td style='padding: 6px 8px;'><b>(=) RESULTADO DO PERÍODO (L/P)</b></td>" &
+			        "<td style='text-align: right; padding: 6px 8px; color: " & IF(Res_Jan >= 0, "#15803D", "#DC2626") & ";'>" & FORMAT(Res_Jan, "R$ #,##0.00;(R$ #,##0.00);R$ 0.00") & "</td>" &
+			        "<td style='text-align: right; padding: 6px 8px; color: " & IF(Res_Fev >= 0, "#15803D", "#DC2626") & ";'>" & FORMAT(Res_Fev, "R$ #,##0.00;(R$ #,##0.00);R$ 0.00") & "</td>" &
+			        "<td style='text-align: right; padding: 6px 8px; color: " & IF(Res_Mar >= 0, "#15803D", "#DC2626") & "; font-weight: 800;'>" & FORMAT(Res_Mar, "R$ #,##0.00;(R$ #,##0.00);R$ 0.00") & "</td>" &
+			        "<td style='text-align: right; padding: 6px 8px; color: " & IF(Res_Tot >= 0, "#15803D", "#DC2626") & ";'>" & FORMAT(Res_Tot, "R$ #,##0.00;(R$ #,##0.00);R$ 0.00") & "</td>" &
+			        "<td style='text-align: right; padding: 6px 8px; color: " & IF(Res_Tot >= 0, "#15803D", "#DC2626") & ";'>" & FORMAT(AV_Res, "0.0%") & "</td>" &
+			      "</tr>" &
+			
+			      -- MARGEM LÍQUIDA %
+			      "<tr style='border-bottom: 1px solid #E2E8F0; font-size: 10px; color: #64748B;'>" &
+			        "<td style='padding: 2.5px 8px; padding-left: 18px; font-style: italic;'>Margem Líquida %</td>" &
+			        "<td style='text-align: right; padding: 2.5px 8px; color: #DC2626;'>" & FORMAT(ML_Jan, "0.0%") & "</td>" &
+			        "<td style='text-align: right; padding: 2.5px 8px; color: #DC2626;'>" & FORMAT(ML_Fev, "0.0%") & "</td>" &
+			        "<td style='text-align: right; padding: 2.5px 8px; font-weight: 700; color: #059669;'>" & FORMAT(ML_Mar, "+0.0%") & "</td>" &
+			        "<td style='text-align: right; padding: 2.5px 8px; color: #DC2626;'>" & FORMAT(ML_Tot, "0.0%") & "</td>" &
+			        "<td style='text-align: right; padding: 2.5px 8px;'>-</td>" &
+			      "</tr>" &
+			
+			      -- CABEÇALHO INDICADORES GERENCIAIS & EVOLUÇÃO
+			      "<tr style='background: #EDE9FE; border-bottom: 1px solid #C4B5FD;'>" &
+			        "<td colspan='6' style='padding: 4px 8px; font-weight: 700; color: #5B21B6; font-size: 9.5px; text-transform: uppercase;'><b>INDICADORES DE CRESCIMENTO & PONTO DE EQUILÍBRIO</b></td>" &
+			      "</tr>" &
+			
+			      -- CRESCIMENTO RECEITA MOM
+			      "<tr style='border-bottom: 1px solid #E2E8F0; color: #475569; font-size: 10px;'>" &
+			        "<td style='padding: 2.5px 8px; padding-left: 18px;'>• Crescimento Receita Bruta (MoM %)</td>" &
+			        "<td style='text-align: right; padding: 2.5px 8px;'>-</td>" &
+			        "<td style='text-align: right; padding: 2.5px 8px; color: #059669; font-weight: 600;'>+" & FORMAT(MoM_RB_Fev, "0.0%") & "</td>" &
+			        "<td style='text-align: right; padding: 2.5px 8px; color: #059669; font-weight: 600;'>+" & FORMAT(MoM_RB_Mar, "0.0%") & "</td>" &
+			        "<td style='text-align: right; padding: 2.5px 8px;'>-</td>" &
+			        "<td style='text-align: right; padding: 2.5px 8px;'>-</td>" &
+			      "</tr>" &
+			
+			      -- VARIAÇÃO RESULTADO MOM R$
+			      "<tr style='border-bottom: 1px solid #E2E8F0; color: #475569; font-size: 10px;'>" &
+			        "<td style='padding: 2.5px 8px; padding-left: 18px;'>• Variação Resultado Líquido (MoM R$)</td>" &
+			        "<td style='text-align: right; padding: 2.5px 8px;'>-</td>" &
+			        "<td style='text-align: right; padding: 2.5px 8px; color: #059669; font-weight: 600;'>+" & FORMAT(MoM_Res_Fev, "R$ #,##0.00") & "</td>" &
+			        "<td style='text-align: right; padding: 2.5px 8px; color: #059669; font-weight: 600;'>+" & FORMAT(MoM_Res_Mar, "R$ #,##0.00") & "</td>" &
+			        "<td style='text-align: right; padding: 2.5px 8px;'>-</td>" &
+			        "<td style='text-align: right; padding: 2.5px 8px;'>-</td>" &
+			      "</tr>" &
+			
+			      
+			
+			    "</tbody>" &
+			  "</table>" &
+			"</div>"
+			```
+		displayFolder: Visões HTML
+		lineageTag: c8d7e6f5-4a3b-2c1d-0e9f-8a7b6c5d4e3f
+
+	partition Medidas = m
+		mode: import
+		source =
+				let
+				    Fonte = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [#"Coluna 1" = _t]),
+				    #"Tipo Alterado" = Table.TransformColumnTypes(Fonte,{{"Coluna 1", type text}}),
+				    #"Colunas Removidas" = Table.RemoveColumns(#"Tipo Alterado",{"Coluna 1"})
+				in
+				    #"Colunas Removidas"
+
+	annotation PBI_ResultType = Table
+

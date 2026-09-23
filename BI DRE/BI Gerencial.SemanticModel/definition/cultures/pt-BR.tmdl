@@ -1,0 +1,4297 @@
+cultureInfo pt-BR
+
+	linguisticMetadata =
+			{
+			  "Version": "4.1.0",
+			  "Language": "en-US",
+			  "Entities": {
+			    "painel.medida": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Painel",
+			          "ConceptualProperty": "Medida"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "medida": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "DRE Gerencial": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "d_calendario.mês_ano": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "d_Calendario",
+			          "ConceptualProperty": "Mês/Ano"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "mês/ano": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "mê/ano": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.78
+			          }
+			        },
+			        {
+			          "mês ano": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "mê ano": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.7566
+			          }
+			        },
+			        {
+			          "Mês": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "medida": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "medida": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "medida.receita_bruta": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas",
+			          "ConceptualProperty": "Receita Bruta"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "receita bruta": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "medida.deduções_sobre_vendas": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas",
+			          "ConceptualProperty": "Deduções sobre Vendas"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "deduções sobre vendas": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "medida.receita_líquida": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas",
+			          "ConceptualProperty": "Receita Líquida"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "receita líquida": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "medida.cmv": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas",
+			          "ConceptualProperty": "CMV"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "cmv": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "medida.lucro_bruto": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas",
+			          "ConceptualProperty": "Lucro Bruto"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "lucro bruto": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "medida.despesas_operacionais": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas",
+			          "ConceptualProperty": "Despesas Operacionais"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "despesas operacionais": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "medida.despesas_financeiras": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas",
+			          "ConceptualProperty": "Despesas Financeiras"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "despesas financeiras": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "medida.receitas_financeiras": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas",
+			          "ConceptualProperty": "Receitas Financeiras"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "receitas financeiras": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "medida.resultado_do_período": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas",
+			          "ConceptualProperty": "Resultado do Período"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "resultado do período": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "medida.margem_bruta_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas",
+			          "ConceptualProperty": "Margem Bruta %"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "margem bruta %": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "margem bruta percentage": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "margem bruta pct": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        }
+			      ]
+			    },
+			    "medida.margem_líquida_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas",
+			          "ConceptualProperty": "Margem Líquida %"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "margem líquida %": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "margem líquida percentage": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "margem líquida pct": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        }
+			      ]
+			    },
+			    "medida.margem_CMV_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas",
+			          "ConceptualProperty": "Margem CMV %"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "margem CMV %": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "margem cmv percentage": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "margem cmv pct": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        }
+			      ]
+			    },
+			    "medida.receita_bruta_MoM_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas",
+			          "ConceptualProperty": "Receita Bruta MoM %"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "receita bruta MoM %": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "receita bruta mom percentage": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.771
+			          }
+			        },
+			        {
+			          "receita bruta mom pct": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.748
+			          }
+			        }
+			      ]
+			    },
+			    "medida.resultado_MoM_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas",
+			          "ConceptualProperty": "Resultado MoM %"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "resultado MoM %": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "resultado mom percentage": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "resultado mom pct": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        }
+			      ]
+			    },
+			    "medida.receita_bruta_MoM_r": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas",
+			          "ConceptualProperty": "Receita Bruta MoM R$"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "receita bruta MoM r$": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "receita bruta mom r dollar": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.78
+			          }
+			        }
+			      ]
+			    },
+			    "medida.resultado_MoM_r": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas",
+			          "ConceptualProperty": "Resultado MoM R$"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "resultado MoM r$": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "resultado mom r dollar": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.771
+			          }
+			        }
+			      ]
+			    },
+			    "medida.total_despesas": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas",
+			          "ConceptualProperty": "Total Despesas"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "total despesas": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "aggregate despesa": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "overall despesa": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        }
+			      ]
+			    },
+			    "medida.despesas_operacionais__receita_líquida": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas",
+			          "ConceptualProperty": "Despesas Operacionais % Receita Líquida"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "despesas operacionais % receita líquida": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "despesa operacionais percentage receita líquida": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.624
+			          }
+			        },
+			        {
+			          "despesa operacionais pct receita líquida": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        }
+			      ]
+			    },
+			    "medida.painel_1": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas",
+			          "ConceptualProperty": "Painel1"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "painel 1": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Painel1": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "medida.painel_valor": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas",
+			          "ConceptualProperty": "Painel Valor"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "painel valor": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "painel courage": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "painel bravery": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "painel heroism": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "painel fearlessness": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "painel boldness": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "painel gallantry": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "painel lionheartedness": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "painel pluck": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "painel spirit": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "painel nerve": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        }
+			      ]
+			    },
+			    "medida.icones_1": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas",
+			          "ConceptualProperty": "Icones1"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "icones 1": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Icones1": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "d_calendario": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "d_Calendario"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "d calendario": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "d_Calendario": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "d_calendario.date": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "d_Calendario",
+			          "ConceptualProperty": "Date"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "date": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "moment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "period": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "d_calendario.ano": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "d_Calendario",
+			          "ConceptualProperty": "Ano"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "ano": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "d_calendario.semestre": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "d_Calendario",
+			          "ConceptualProperty": "Semestre"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "semestre": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "d_calendario.trimestre": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "d_Calendario",
+			          "ConceptualProperty": "Trimestre"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "trimestre": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "d_calendario.bimestre": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "d_Calendario",
+			          "ConceptualProperty": "Bimestre"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "bimestre": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "d_calendario.mês_3": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "d_Calendario",
+			          "ConceptualProperty": "Mês3"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "mês 3": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "mê 3": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.78
+			          }
+			        },
+			        {
+			          "Mês3": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "d_calendario.mês_2": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "d_Calendario",
+			          "ConceptualProperty": "Mês2"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "mês 2": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "mê 2": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.78
+			          }
+			        },
+			        {
+			          "Mês2": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "d_calendario.mê": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "d_Calendario",
+			          "ConceptualProperty": "Mês"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "mê": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "d_calendario.ordenacao_mes_ano": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "d_Calendario",
+			          "ConceptualProperty": "OrdenacaoMesAno"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "ordenacao mes ano": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "ordenacao me ano": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.78
+			          }
+			        },
+			        {
+			          "OrdenacaoMesAno": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "d_calendario.dia": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "d_Calendario",
+			          "ConceptualProperty": "Dia"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "dia": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "d_calendario.dia_da_semana": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "d_Calendario",
+			          "ConceptualProperty": "Dia da Semana"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "dia da semana": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "d_calendario.dia_da_semana_abreviado": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "d_Calendario",
+			          "ConceptualProperty": "Dia da Semana Abreviado"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "dia da semana abreviado": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "d_calendario.núm_da_semana": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "d_Calendario",
+			          "ConceptualProperty": "Núm da Semana"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "núm da semana": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "d_calendario.dia_me": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "d_Calendario",
+			          "ConceptualProperty": "DiaMes"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "dia me": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "DiaMes": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "d_calendario.feriado": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "d_Calendario",
+			          "ConceptualProperty": "Feriados"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "feriado": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "d_calendario.tipo": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "d_Calendario",
+			          "ConceptualProperty": "Tipo"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "tipo": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "f_DRE": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "f_DRE"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "f DRE": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "f_DRE": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "DRE": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        }
+			      ]
+			    },
+			    "f_DRE.me": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "f_DRE",
+			          "ConceptualProperty": "mes"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "me": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "date": {
+			            "State": "Generated",
+			            "Weight": 0.7
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "f_DRE.me.hierarquia_de_data": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "f_DRE",
+			          "VariationSource": "mes",
+			          "VariationSet": "Variation",
+			          "Hierarchy": "Hierarquia de datas"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "hierarquia de data": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "hierarquia de information": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "hierarquia de fact": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "hierarquia de info": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "hierarquia de statistic": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "hierarquia de document": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "hierarquia de figure": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "hierarquia de record": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        }
+			      ]
+			    },
+			    "f_DRE.me.ano": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "f_DRE",
+			          "VariationSource": "mes",
+			          "VariationSet": "Variation",
+			          "Hierarchy": "Hierarquia de datas",
+			          "HierarchyLevel": "Ano"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "ano": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "me ano": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "f_DRE.me.trimestre": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "f_DRE",
+			          "VariationSource": "mes",
+			          "VariationSet": "Variation",
+			          "Hierarchy": "Hierarquia de datas",
+			          "HierarchyLevel": "Trimestre"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "trimestre": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "me trimestre": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "f_DRE.me.mê": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "f_DRE",
+			          "VariationSource": "mes",
+			          "VariationSet": "Variation",
+			          "Hierarchy": "Hierarquia de datas",
+			          "HierarchyLevel": "Mês"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "mê": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "me mê": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "f_DRE.me.dia": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "f_DRE",
+			          "VariationSource": "mes",
+			          "VariationSet": "Variation",
+			          "Hierarchy": "Hierarquia de datas",
+			          "HierarchyLevel": "Dia"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "dia": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "me dia": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "f_DRE.receita_bruta": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "f_DRE",
+			          "ConceptualProperty": "receita_bruta"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "receita bruta": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "receita_bruta": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "f_DRE.deducoes_sobre_venda": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "f_DRE",
+			          "ConceptualProperty": "deducoes_sobre_vendas"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "deducoes sobre venda": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "deducoe sobre venda": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.78
+			          }
+			        },
+			        {
+			          "deducoes_sobre_vendas": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "f_DRE.receita_liquida": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "f_DRE",
+			          "ConceptualProperty": "receita_liquida"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "receita liquida": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "receita_liquida": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "f_DRE.cmv": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "f_DRE",
+			          "ConceptualProperty": "cmv"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "cmv": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "f_DRE.lucro_bruto": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "f_DRE",
+			          "ConceptualProperty": "lucro_bruto"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "lucro bruto": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "lucro_bruto": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "f_DRE.despesas_operacionais": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "f_DRE",
+			          "ConceptualProperty": "despesas_operacionais"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "despesas operacionais": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "despesa operacionais": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.78
+			          }
+			        },
+			        {
+			          "despesas_operacionais": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "f_DRE.despesas_financeira": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "f_DRE",
+			          "ConceptualProperty": "despesas_financeiras"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "despesas financeira": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "despesa financeira": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.78
+			          }
+			        },
+			        {
+			          "despesas_financeiras": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "f_DRE.receitas_financeira": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "f_DRE",
+			          "ConceptualProperty": "receitas_financeiras"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "receitas financeira": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "receita financeira": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.78
+			          }
+			        },
+			        {
+			          "receitas_financeiras": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "f_DRE.resultado_do_periodo": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "f_DRE",
+			          "ConceptualProperty": "resultado_do_periodo"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "resultado do periodo": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "resultado_do_periodo": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "painel": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Painel"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "painel": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "painel.ID": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Painel",
+			          "ConceptualProperty": "ID"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "ID": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "identification": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "identity": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "credential": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        }
+			      ],
+			      "NameType": "Identifier"
+			    },
+			    "f_despesa.valor": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "f_Despesas",
+			          "ConceptualProperty": "valor"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "valor": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "courage": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "bravery": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "heroism": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "fearlessness": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "boldness": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "gallantry": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "lionheartedness": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "pluck": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "spirit": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "nerve": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        }
+			      ]
+			    },
+			    "f_despesa.grupo_dre": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "f_Despesas",
+			          "ConceptualProperty": "grupo_dre"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "grupo dre": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "grupo_dre": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "f_despesa.descricao_conta": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "f_Despesas",
+			          "ConceptualProperty": "descricao_conta"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "descricao conta": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "descricao_conta": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "Despesas": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "f_despesa.conta_id": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "f_Despesas",
+			          "ConceptualProperty": "conta_id"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "conta id": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "conta_id": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "conta identification": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "conta identity": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "conta identifier": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "conta credential": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        }
+			      ]
+			    },
+			    "f_despesa.me": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "f_Despesas",
+			          "ConceptualProperty": "mes"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "me": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "date": {
+			            "State": "Generated",
+			            "Weight": 0.7
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "f_despesa": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "f_Despesas"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "f despesa": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "f_Despesas": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    }
+			  },
+			  "Relationships": {
+			    "f_DRE_me_ano_has_f_DRE_me_trimestre": {
+			      "Binding": {
+			        "ConceptualEntity": "f_DRE"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_DRE.me.ano": {
+			          "Target": {
+			            "Entity": "f_DRE.me.ano"
+			          }
+			        },
+			        "f_DRE.me.trimestre": {
+			          "Target": {
+			            "Entity": "f_DRE.me.trimestre"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_DRE.me.ano"
+			            },
+			            "Object": {
+			              "Role": "f_DRE.me.trimestre"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "anos_have_trimestres"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_DRE.me.trimestre"
+			            },
+			            "Object": {
+			              "Role": "f_DRE.me.ano"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "trimestres_have_anos"
+			        },
+			        {
+			          "Preposition": {
+			            "Subject": {
+			              "Role": "f_DRE.me.trimestre"
+			            },
+			            "Prepositions": [
+			              {
+			                "in": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Object": {
+			              "Role": "f_DRE.me.ano"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "trimestres_are_in_anos"
+			        }
+			      ]
+			    },
+			    "f_DRE_me_hierarquia_de_data_has_f_DRE_me_dia": {
+			      "Binding": {
+			        "ConceptualEntity": "f_DRE"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_DRE.me.hierarquia_de_data": {
+			          "Target": {
+			            "Entity": "f_DRE.me.hierarquia_de_data"
+			          }
+			        },
+			        "f_DRE.me.dia": {
+			          "Target": {
+			            "Entity": "f_DRE.me.dia"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_DRE.me.hierarquia_de_data"
+			            },
+			            "Object": {
+			              "Role": "f_DRE.me.dia"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "hierarquia_de_data_have_dias"
+			        }
+			      ]
+			    },
+			    "f_DRE_me_hierarquia_de_data_has_f_DRE_me_mê": {
+			      "Binding": {
+			        "ConceptualEntity": "f_DRE"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_DRE.me.hierarquia_de_data": {
+			          "Target": {
+			            "Entity": "f_DRE.me.hierarquia_de_data"
+			          }
+			        },
+			        "f_DRE.me.mê": {
+			          "Target": {
+			            "Entity": "f_DRE.me.mê"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_DRE.me.hierarquia_de_data"
+			            },
+			            "Object": {
+			              "Role": "f_DRE.me.mê"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "hierarquia_de_data_have_mê"
+			        }
+			      ]
+			    },
+			    "f_DRE_me_hierarquia_de_data_has_f_DRE_me_trimestre": {
+			      "Binding": {
+			        "ConceptualEntity": "f_DRE"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_DRE.me.hierarquia_de_data": {
+			          "Target": {
+			            "Entity": "f_DRE.me.hierarquia_de_data"
+			          }
+			        },
+			        "f_DRE.me.trimestre": {
+			          "Target": {
+			            "Entity": "f_DRE.me.trimestre"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_DRE.me.hierarquia_de_data"
+			            },
+			            "Object": {
+			              "Role": "f_DRE.me.trimestre"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "hierarquia_de_data_have_trimestres"
+			        }
+			      ]
+			    },
+			    "f_DRE_me_hierarquia_de_data_has_f_DRE_me_ano": {
+			      "Binding": {
+			        "ConceptualEntity": "f_DRE"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_DRE.me.hierarquia_de_data": {
+			          "Target": {
+			            "Entity": "f_DRE.me.hierarquia_de_data"
+			          }
+			        },
+			        "f_DRE.me.ano": {
+			          "Target": {
+			            "Entity": "f_DRE.me.ano"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_DRE.me.hierarquia_de_data"
+			            },
+			            "Object": {
+			              "Role": "f_DRE.me.ano"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "hierarquia_de_data_have_anos"
+			        }
+			      ]
+			    },
+			    "f_DRE_me_has_hierarquia_de_data": {
+			      "Binding": {
+			        "ConceptualEntity": "f_DRE"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_DRE.me": {
+			          "Target": {
+			            "Entity": "f_DRE.me"
+			          }
+			        },
+			        "f_DRE.me.hierarquia_de_data": {
+			          "Target": {
+			            "Entity": "f_DRE.me.hierarquia_de_data"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_DRE.me"
+			            },
+			            "Object": {
+			              "Role": "f_DRE.me.hierarquia_de_data"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "me_have_hierarquia_de_data"
+			        }
+			      ]
+			    },
+			    "f_despesa_has_d_calendario": {
+			      "Binding": {
+			        "ConceptualEntity": "f_Despesas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_despesa": {
+			          "Target": {
+			            "Entity": "f_despesa"
+			          }
+			        },
+			        "d_calendario": {
+			          "Target": {
+			            "Entity": "d_calendario"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_despesa"
+			            },
+			            "Object": {
+			              "Role": "d_calendario"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_despesas_have_d_calendarios"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_calendario"
+			            },
+			            "Object": {
+			              "Role": "f_despesa"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_calendarios_have_f_despesas"
+			        }
+			      ]
+			    },
+			    "f_DRE_has_d_calendario": {
+			      "Binding": {
+			        "ConceptualEntity": "f_DRE"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_DRE": {
+			          "Target": {
+			            "Entity": "f_DRE"
+			          }
+			        },
+			        "d_calendario": {
+			          "Target": {
+			            "Entity": "d_calendario"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_DRE"
+			            },
+			            "Object": {
+			              "Role": "d_calendario"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_DREs_have_d_calendarios"
+			        }
+			      ]
+			    },
+			    "d_calendario_has_f_DRE": {
+			      "Binding": {
+			        "ConceptualEntity": "d_Calendario"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "d_calendario": {
+			          "Target": {
+			            "Entity": "d_calendario"
+			          }
+			        },
+			        "f_DRE": {
+			          "Target": {
+			            "Entity": "f_DRE"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_calendario"
+			            },
+			            "Object": {
+			              "Role": "f_DRE"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_calendarios_have_f_DREs"
+			        }
+			      ]
+			    },
+			    "f_despesa_has_me": {
+			      "Binding": {
+			        "ConceptualEntity": "f_Despesas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_despesa": {
+			          "Target": {
+			            "Entity": "f_despesa"
+			          }
+			        },
+			        "f_despesa.me": {
+			          "Target": {
+			            "Entity": "f_despesa.me"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_despesa"
+			            },
+			            "Object": {
+			              "Role": "f_despesa.me"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_despesas_have_me"
+			        }
+			      ]
+			    },
+			    "f_despesa_has_conta_id": {
+			      "Binding": {
+			        "ConceptualEntity": "f_Despesas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_despesa": {
+			          "Target": {
+			            "Entity": "f_despesa"
+			          }
+			        },
+			        "f_despesa.conta_id": {
+			          "Target": {
+			            "Entity": "f_despesa.conta_id"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_despesa"
+			            },
+			            "Object": {
+			              "Role": "f_despesa.conta_id"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_despesas_have_conta_ids"
+			        }
+			      ]
+			    },
+			    "f_despesa_has_descricao_conta": {
+			      "Binding": {
+			        "ConceptualEntity": "f_Despesas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_despesa": {
+			          "Target": {
+			            "Entity": "f_despesa"
+			          }
+			        },
+			        "f_despesa.descricao_conta": {
+			          "Target": {
+			            "Entity": "f_despesa.descricao_conta"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_despesa"
+			            },
+			            "Object": {
+			              "Role": "f_despesa.descricao_conta"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_despesas_have_descricao_contas"
+			        }
+			      ]
+			    },
+			    "f_despesa_has_grupo_dre": {
+			      "Binding": {
+			        "ConceptualEntity": "f_Despesas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_despesa": {
+			          "Target": {
+			            "Entity": "f_despesa"
+			          }
+			        },
+			        "f_despesa.grupo_dre": {
+			          "Target": {
+			            "Entity": "f_despesa.grupo_dre"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_despesa"
+			            },
+			            "Object": {
+			              "Role": "f_despesa.grupo_dre"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_despesas_have_grupo_dres"
+			        }
+			      ]
+			    },
+			    "f_despesa_has_valor": {
+			      "Binding": {
+			        "ConceptualEntity": "f_Despesas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_despesa": {
+			          "Target": {
+			            "Entity": "f_despesa"
+			          }
+			        },
+			        "f_despesa.valor": {
+			          "Target": {
+			            "Entity": "f_despesa.valor"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_despesa"
+			            },
+			            "Object": {
+			              "Role": "f_despesa.valor"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_despesas_have_valor"
+			        },
+			        {
+			          "Adjective": {
+			            "Subject": {
+			              "Role": "f_despesa"
+			            },
+			            "Adjectives": [
+			              {
+			                "expensive": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Antonyms": [
+			              {
+			                "cheap": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Measurement": {
+			              "Role": "f_despesa.valor"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "valor_indicates_how_expensive_f_despesas_are"
+			        }
+			      ]
+			    },
+			    "painel_has_ID": {
+			      "Binding": {
+			        "ConceptualEntity": "Painel"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "painel": {
+			          "Target": {
+			            "Entity": "painel"
+			          }
+			        },
+			        "painel.ID": {
+			          "Target": {
+			            "Entity": "painel.ID"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "painel"
+			            },
+			            "Object": {
+			              "Role": "painel.ID"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "painels_have_ID"
+			        },
+			        {
+			          "Name": {
+			            "Subject": {
+			              "Role": "painel"
+			            },
+			            "Name": {
+			              "Role": "painel.ID"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "ID_are_names_IDs_of_painels"
+			        }
+			      ]
+			    },
+			    "f_DRE_has_resultado_do_periodo": {
+			      "Binding": {
+			        "ConceptualEntity": "f_DRE"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_DRE": {
+			          "Target": {
+			            "Entity": "f_DRE"
+			          }
+			        },
+			        "f_DRE.resultado_do_periodo": {
+			          "Target": {
+			            "Entity": "f_DRE.resultado_do_periodo"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_DRE"
+			            },
+			            "Object": {
+			              "Role": "f_DRE.resultado_do_periodo"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_DREs_have_resultado_do_periodos"
+			        }
+			      ]
+			    },
+			    "f_DRE_has_receitas_financeira": {
+			      "Binding": {
+			        "ConceptualEntity": "f_DRE"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_DRE": {
+			          "Target": {
+			            "Entity": "f_DRE"
+			          }
+			        },
+			        "f_DRE.receitas_financeira": {
+			          "Target": {
+			            "Entity": "f_DRE.receitas_financeira"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_DRE"
+			            },
+			            "Object": {
+			              "Role": "f_DRE.receitas_financeira"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_DREs_have_receitas_financeiras"
+			        }
+			      ]
+			    },
+			    "f_DRE_has_despesas_financeira": {
+			      "Binding": {
+			        "ConceptualEntity": "f_DRE"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_DRE": {
+			          "Target": {
+			            "Entity": "f_DRE"
+			          }
+			        },
+			        "f_DRE.despesas_financeira": {
+			          "Target": {
+			            "Entity": "f_DRE.despesas_financeira"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_DRE"
+			            },
+			            "Object": {
+			              "Role": "f_DRE.despesas_financeira"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_DREs_have_despesas_financeiras"
+			        }
+			      ]
+			    },
+			    "f_DRE_has_despesas_operacionais": {
+			      "Binding": {
+			        "ConceptualEntity": "f_DRE"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_DRE": {
+			          "Target": {
+			            "Entity": "f_DRE"
+			          }
+			        },
+			        "f_DRE.despesas_operacionais": {
+			          "Target": {
+			            "Entity": "f_DRE.despesas_operacionais"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_DRE"
+			            },
+			            "Object": {
+			              "Role": "f_DRE.despesas_operacionais"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_DREs_have_despesas_operacionaises"
+			        }
+			      ]
+			    },
+			    "f_DRE_has_lucro_bruto": {
+			      "Binding": {
+			        "ConceptualEntity": "f_DRE"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_DRE": {
+			          "Target": {
+			            "Entity": "f_DRE"
+			          }
+			        },
+			        "f_DRE.lucro_bruto": {
+			          "Target": {
+			            "Entity": "f_DRE.lucro_bruto"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_DRE"
+			            },
+			            "Object": {
+			              "Role": "f_DRE.lucro_bruto"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_DREs_have_lucro_brutos"
+			        }
+			      ]
+			    },
+			    "f_DRE_has_cmv": {
+			      "Binding": {
+			        "ConceptualEntity": "f_DRE"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_DRE": {
+			          "Target": {
+			            "Entity": "f_DRE"
+			          }
+			        },
+			        "f_DRE.cmv": {
+			          "Target": {
+			            "Entity": "f_DRE.cmv"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_DRE"
+			            },
+			            "Object": {
+			              "Role": "f_DRE.cmv"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_DREs_have_cmvs"
+			        }
+			      ]
+			    },
+			    "f_DRE_has_receita_liquida": {
+			      "Binding": {
+			        "ConceptualEntity": "f_DRE"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_DRE": {
+			          "Target": {
+			            "Entity": "f_DRE"
+			          }
+			        },
+			        "f_DRE.receita_liquida": {
+			          "Target": {
+			            "Entity": "f_DRE.receita_liquida"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_DRE"
+			            },
+			            "Object": {
+			              "Role": "f_DRE.receita_liquida"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_DREs_have_receita_liquidas"
+			        }
+			      ]
+			    },
+			    "f_DRE_has_deducoes_sobre_venda": {
+			      "Binding": {
+			        "ConceptualEntity": "f_DRE"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_DRE": {
+			          "Target": {
+			            "Entity": "f_DRE"
+			          }
+			        },
+			        "f_DRE.deducoes_sobre_venda": {
+			          "Target": {
+			            "Entity": "f_DRE.deducoes_sobre_venda"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_DRE"
+			            },
+			            "Object": {
+			              "Role": "f_DRE.deducoes_sobre_venda"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_DREs_have_deducoes_sobre_venda"
+			        }
+			      ]
+			    },
+			    "f_DRE_has_receita_bruta": {
+			      "Binding": {
+			        "ConceptualEntity": "f_DRE"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_DRE": {
+			          "Target": {
+			            "Entity": "f_DRE"
+			          }
+			        },
+			        "f_DRE.receita_bruta": {
+			          "Target": {
+			            "Entity": "f_DRE.receita_bruta"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_DRE"
+			            },
+			            "Object": {
+			              "Role": "f_DRE.receita_bruta"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_DREs_have_receita_brutas"
+			        }
+			      ]
+			    },
+			    "f_DRE_has_me": {
+			      "Binding": {
+			        "ConceptualEntity": "f_DRE"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_DRE": {
+			          "Target": {
+			            "Entity": "f_DRE"
+			          }
+			        },
+			        "f_DRE.me": {
+			          "Target": {
+			            "Entity": "f_DRE.me"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_DRE"
+			            },
+			            "Object": {
+			              "Role": "f_DRE.me"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_DREs_have_me"
+			        }
+			      ]
+			    },
+			    "d_calendario_has_tipo": {
+			      "Binding": {
+			        "ConceptualEntity": "d_Calendario"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "d_calendario": {
+			          "Target": {
+			            "Entity": "d_calendario"
+			          }
+			        },
+			        "d_calendario.tipo": {
+			          "Target": {
+			            "Entity": "d_calendario.tipo"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_calendario"
+			            },
+			            "Object": {
+			              "Role": "d_calendario.tipo"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_calendarios_have_tipos"
+			        }
+			      ]
+			    },
+			    "d_calendario_has_feriado": {
+			      "Binding": {
+			        "ConceptualEntity": "d_Calendario"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "d_calendario": {
+			          "Target": {
+			            "Entity": "d_calendario"
+			          }
+			        },
+			        "d_calendario.feriado": {
+			          "Target": {
+			            "Entity": "d_calendario.feriado"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_calendario"
+			            },
+			            "Object": {
+			              "Role": "d_calendario.feriado"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_calendarios_have_feriados"
+			        }
+			      ]
+			    },
+			    "d_calendario_has_dia_me": {
+			      "Binding": {
+			        "ConceptualEntity": "d_Calendario"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "d_calendario": {
+			          "Target": {
+			            "Entity": "d_calendario"
+			          }
+			        },
+			        "d_calendario.dia_me": {
+			          "Target": {
+			            "Entity": "d_calendario.dia_me"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_calendario"
+			            },
+			            "Object": {
+			              "Role": "d_calendario.dia_me"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_calendarios_have_dia_me"
+			        }
+			      ]
+			    },
+			    "d_calendario_has_núm_da_semana": {
+			      "Binding": {
+			        "ConceptualEntity": "d_Calendario"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "d_calendario": {
+			          "Target": {
+			            "Entity": "d_calendario"
+			          }
+			        },
+			        "d_calendario.núm_da_semana": {
+			          "Target": {
+			            "Entity": "d_calendario.núm_da_semana"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_calendario"
+			            },
+			            "Object": {
+			              "Role": "d_calendario.núm_da_semana"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_calendarios_have_núm_da_semanas"
+			        }
+			      ]
+			    },
+			    "d_calendario_has_dia_da_semana_abreviado": {
+			      "Binding": {
+			        "ConceptualEntity": "d_Calendario"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "d_calendario": {
+			          "Target": {
+			            "Entity": "d_calendario"
+			          }
+			        },
+			        "d_calendario.dia_da_semana_abreviado": {
+			          "Target": {
+			            "Entity": "d_calendario.dia_da_semana_abreviado"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_calendario"
+			            },
+			            "Object": {
+			              "Role": "d_calendario.dia_da_semana_abreviado"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_calendarios_have_dia_da_semana_abreviados"
+			        }
+			      ]
+			    },
+			    "d_calendario_has_dia_da_semana": {
+			      "Binding": {
+			        "ConceptualEntity": "d_Calendario"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "d_calendario": {
+			          "Target": {
+			            "Entity": "d_calendario"
+			          }
+			        },
+			        "d_calendario.dia_da_semana": {
+			          "Target": {
+			            "Entity": "d_calendario.dia_da_semana"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_calendario"
+			            },
+			            "Object": {
+			              "Role": "d_calendario.dia_da_semana"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_calendarios_have_dia_da_semanas"
+			        }
+			      ]
+			    },
+			    "d_calendario_has_dia": {
+			      "Binding": {
+			        "ConceptualEntity": "d_Calendario"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "d_calendario": {
+			          "Target": {
+			            "Entity": "d_calendario"
+			          }
+			        },
+			        "d_calendario.dia": {
+			          "Target": {
+			            "Entity": "d_calendario.dia"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_calendario"
+			            },
+			            "Object": {
+			              "Role": "d_calendario.dia"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_calendarios_have_dias"
+			        }
+			      ]
+			    },
+			    "d_calendario_has_ordenacao_mes_ano": {
+			      "Binding": {
+			        "ConceptualEntity": "d_Calendario"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "d_calendario": {
+			          "Target": {
+			            "Entity": "d_calendario"
+			          }
+			        },
+			        "d_calendario.ordenacao_mes_ano": {
+			          "Target": {
+			            "Entity": "d_calendario.ordenacao_mes_ano"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_calendario"
+			            },
+			            "Object": {
+			              "Role": "d_calendario.ordenacao_mes_ano"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_calendarios_have_ordenacao_mes_anos"
+			        }
+			      ]
+			    },
+			    "d_calendario_has_mê": {
+			      "Binding": {
+			        "ConceptualEntity": "d_Calendario"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "d_calendario": {
+			          "Target": {
+			            "Entity": "d_calendario"
+			          }
+			        },
+			        "d_calendario.mê": {
+			          "Target": {
+			            "Entity": "d_calendario.mê"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_calendario"
+			            },
+			            "Object": {
+			              "Role": "d_calendario.mê"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_calendarios_have_mê"
+			        }
+			      ]
+			    },
+			    "d_calendario_has_mês_2": {
+			      "Binding": {
+			        "ConceptualEntity": "d_Calendario"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "d_calendario": {
+			          "Target": {
+			            "Entity": "d_calendario"
+			          }
+			        },
+			        "d_calendario.mês_2": {
+			          "Target": {
+			            "Entity": "d_calendario.mês_2"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_calendario"
+			            },
+			            "Object": {
+			              "Role": "d_calendario.mês_2"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_calendarios_have_mês_2"
+			        }
+			      ]
+			    },
+			    "d_calendario_has_mês_3": {
+			      "Binding": {
+			        "ConceptualEntity": "d_Calendario"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "d_calendario": {
+			          "Target": {
+			            "Entity": "d_calendario"
+			          }
+			        },
+			        "d_calendario.mês_3": {
+			          "Target": {
+			            "Entity": "d_calendario.mês_3"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_calendario"
+			            },
+			            "Object": {
+			              "Role": "d_calendario.mês_3"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_calendarios_have_mês_3"
+			        }
+			      ]
+			    },
+			    "d_calendario_has_bimestre": {
+			      "Binding": {
+			        "ConceptualEntity": "d_Calendario"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "d_calendario": {
+			          "Target": {
+			            "Entity": "d_calendario"
+			          }
+			        },
+			        "d_calendario.bimestre": {
+			          "Target": {
+			            "Entity": "d_calendario.bimestre"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_calendario"
+			            },
+			            "Object": {
+			              "Role": "d_calendario.bimestre"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_calendarios_have_bimestres"
+			        }
+			      ]
+			    },
+			    "d_calendario_has_trimestre": {
+			      "Binding": {
+			        "ConceptualEntity": "d_Calendario"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "d_calendario": {
+			          "Target": {
+			            "Entity": "d_calendario"
+			          }
+			        },
+			        "d_calendario.trimestre": {
+			          "Target": {
+			            "Entity": "d_calendario.trimestre"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_calendario"
+			            },
+			            "Object": {
+			              "Role": "d_calendario.trimestre"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_calendarios_have_trimestres"
+			        }
+			      ]
+			    },
+			    "d_calendario_has_semestre": {
+			      "Binding": {
+			        "ConceptualEntity": "d_Calendario"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "d_calendario": {
+			          "Target": {
+			            "Entity": "d_calendario"
+			          }
+			        },
+			        "d_calendario.semestre": {
+			          "Target": {
+			            "Entity": "d_calendario.semestre"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_calendario"
+			            },
+			            "Object": {
+			              "Role": "d_calendario.semestre"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_calendarios_have_semestres"
+			        }
+			      ]
+			    },
+			    "d_calendario_has_ano": {
+			      "Binding": {
+			        "ConceptualEntity": "d_Calendario"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "d_calendario": {
+			          "Target": {
+			            "Entity": "d_calendario"
+			          }
+			        },
+			        "d_calendario.ano": {
+			          "Target": {
+			            "Entity": "d_calendario.ano"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_calendario"
+			            },
+			            "Object": {
+			              "Role": "d_calendario.ano"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_calendarios_have_anos"
+			        }
+			      ]
+			    },
+			    "d_calendario_has_date": {
+			      "Binding": {
+			        "ConceptualEntity": "d_Calendario"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "d_calendario": {
+			          "Target": {
+			            "Entity": "d_calendario"
+			          }
+			        },
+			        "d_calendario.date": {
+			          "Target": {
+			            "Entity": "d_calendario.date"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_calendario"
+			            },
+			            "Object": {
+			              "Role": "d_calendario.date"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_calendarios_have_dates"
+			        }
+			      ]
+			    },
+			    "f_DRE_has_medida_icones_1": {
+			      "Binding": {
+			        "ConceptualEntity": "f_DRE"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_DRE": {
+			          "Target": {
+			            "Entity": "f_DRE"
+			          }
+			        },
+			        "medida.icones_1": {
+			          "Target": {
+			            "Entity": "medida.icones_1"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_DRE"
+			            },
+			            "Object": {
+			              "Role": "medida.icones_1"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_DREs_have_icones_1"
+			        }
+			      ]
+			    },
+			    "painel_has_medida_icones_1": {
+			      "Binding": {
+			        "ConceptualEntity": "Painel"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "painel": {
+			          "Target": {
+			            "Entity": "painel"
+			          }
+			        },
+			        "medida.icones_1": {
+			          "Target": {
+			            "Entity": "medida.icones_1"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "painel"
+			            },
+			            "Object": {
+			              "Role": "medida.icones_1"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "painels_have_icones_1"
+			        }
+			      ]
+			    },
+			    "f_DRE_has_medida_painel_valor": {
+			      "Binding": {
+			        "ConceptualEntity": "f_DRE"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_DRE": {
+			          "Target": {
+			            "Entity": "f_DRE"
+			          }
+			        },
+			        "medida.painel_valor": {
+			          "Target": {
+			            "Entity": "medida.painel_valor"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_DRE"
+			            },
+			            "Object": {
+			              "Role": "medida.painel_valor"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_DREs_have_painel_valor"
+			        }
+			      ]
+			    },
+			    "painel_has_medida_painel_valor": {
+			      "Binding": {
+			        "ConceptualEntity": "Painel"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "painel": {
+			          "Target": {
+			            "Entity": "painel"
+			          }
+			        },
+			        "medida.painel_valor": {
+			          "Target": {
+			            "Entity": "medida.painel_valor"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "painel"
+			            },
+			            "Object": {
+			              "Role": "medida.painel_valor"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "painels_have_painel_valor"
+			        }
+			      ]
+			    },
+			    "f_DRE_has_medida_painel_1": {
+			      "Binding": {
+			        "ConceptualEntity": "f_DRE"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_DRE": {
+			          "Target": {
+			            "Entity": "f_DRE"
+			          }
+			        },
+			        "medida.painel_1": {
+			          "Target": {
+			            "Entity": "medida.painel_1"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_DRE"
+			            },
+			            "Object": {
+			              "Role": "medida.painel_1"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_DREs_have_painel_1"
+			        }
+			      ]
+			    },
+			    "painel_has_medida_painel_1": {
+			      "Binding": {
+			        "ConceptualEntity": "Painel"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "painel": {
+			          "Target": {
+			            "Entity": "painel"
+			          }
+			        },
+			        "medida.painel_1": {
+			          "Target": {
+			            "Entity": "medida.painel_1"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "painel"
+			            },
+			            "Object": {
+			              "Role": "medida.painel_1"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "painels_have_painel_1"
+			        }
+			      ]
+			    },
+			    "f_DRE_has_medida_despesas_operacionais__receita_líquida": {
+			      "Binding": {
+			        "ConceptualEntity": "f_DRE"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_DRE": {
+			          "Target": {
+			            "Entity": "f_DRE"
+			          }
+			        },
+			        "medida.despesas_operacionais__receita_líquida": {
+			          "Target": {
+			            "Entity": "medida.despesas_operacionais__receita_líquida"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_DRE"
+			            },
+			            "Object": {
+			              "Role": "medida.despesas_operacionais__receita_líquida"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_DREs_have_despesas_operacionais__receita_líquida"
+			        }
+			      ]
+			    },
+			    "f_DRE_has_medida_total_despesas": {
+			      "Binding": {
+			        "ConceptualEntity": "f_DRE"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_DRE": {
+			          "Target": {
+			            "Entity": "f_DRE"
+			          }
+			        },
+			        "medida.total_despesas": {
+			          "Target": {
+			            "Entity": "medida.total_despesas"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_DRE"
+			            },
+			            "Object": {
+			              "Role": "medida.total_despesas"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_DREs_have_total_despesas"
+			        }
+			      ]
+			    },
+			    "f_DRE_has_medida_resultado_MoM_r": {
+			      "Binding": {
+			        "ConceptualEntity": "f_DRE"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_DRE": {
+			          "Target": {
+			            "Entity": "f_DRE"
+			          }
+			        },
+			        "medida.resultado_MoM_r": {
+			          "Target": {
+			            "Entity": "medida.resultado_MoM_r"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_DRE"
+			            },
+			            "Object": {
+			              "Role": "medida.resultado_MoM_r"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_DREs_have_resultado_MoM_r"
+			        }
+			      ]
+			    },
+			    "f_DRE_has_medida_receita_bruta_MoM_r": {
+			      "Binding": {
+			        "ConceptualEntity": "f_DRE"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_DRE": {
+			          "Target": {
+			            "Entity": "f_DRE"
+			          }
+			        },
+			        "medida.receita_bruta_MoM_r": {
+			          "Target": {
+			            "Entity": "medida.receita_bruta_MoM_r"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_DRE"
+			            },
+			            "Object": {
+			              "Role": "medida.receita_bruta_MoM_r"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_DREs_have_receita_bruta_MoM_r"
+			        }
+			      ]
+			    },
+			    "f_DRE_has_medida_resultado_MoM_": {
+			      "Binding": {
+			        "ConceptualEntity": "f_DRE"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_DRE": {
+			          "Target": {
+			            "Entity": "f_DRE"
+			          }
+			        },
+			        "medida.resultado_MoM_": {
+			          "Target": {
+			            "Entity": "medida.resultado_MoM_"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_DRE"
+			            },
+			            "Object": {
+			              "Role": "medida.resultado_MoM_"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_DREs_have_resultado_MoM_"
+			        }
+			      ]
+			    },
+			    "f_DRE_has_medida_receita_bruta_MoM_": {
+			      "Binding": {
+			        "ConceptualEntity": "f_DRE"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_DRE": {
+			          "Target": {
+			            "Entity": "f_DRE"
+			          }
+			        },
+			        "medida.receita_bruta_MoM_": {
+			          "Target": {
+			            "Entity": "medida.receita_bruta_MoM_"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_DRE"
+			            },
+			            "Object": {
+			              "Role": "medida.receita_bruta_MoM_"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_DREs_have_receita_bruta_MoM_"
+			        }
+			      ]
+			    },
+			    "f_DRE_has_medida_margem_CMV_": {
+			      "Binding": {
+			        "ConceptualEntity": "f_DRE"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_DRE": {
+			          "Target": {
+			            "Entity": "f_DRE"
+			          }
+			        },
+			        "medida.margem_CMV_": {
+			          "Target": {
+			            "Entity": "medida.margem_CMV_"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_DRE"
+			            },
+			            "Object": {
+			              "Role": "medida.margem_CMV_"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_DREs_have_margem_CMV_"
+			        }
+			      ]
+			    },
+			    "f_DRE_has_medida_margem_líquida_": {
+			      "Binding": {
+			        "ConceptualEntity": "f_DRE"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_DRE": {
+			          "Target": {
+			            "Entity": "f_DRE"
+			          }
+			        },
+			        "medida.margem_líquida_": {
+			          "Target": {
+			            "Entity": "medida.margem_líquida_"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_DRE"
+			            },
+			            "Object": {
+			              "Role": "medida.margem_líquida_"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_DREs_have_margem_líquida_"
+			        }
+			      ]
+			    },
+			    "f_DRE_has_medida_margem_bruta_": {
+			      "Binding": {
+			        "ConceptualEntity": "f_DRE"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_DRE": {
+			          "Target": {
+			            "Entity": "f_DRE"
+			          }
+			        },
+			        "medida.margem_bruta_": {
+			          "Target": {
+			            "Entity": "medida.margem_bruta_"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_DRE"
+			            },
+			            "Object": {
+			              "Role": "medida.margem_bruta_"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_DREs_have_margem_bruta_"
+			        }
+			      ]
+			    },
+			    "f_DRE_has_medida_resultado_do_período": {
+			      "Binding": {
+			        "ConceptualEntity": "f_DRE"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_DRE": {
+			          "Target": {
+			            "Entity": "f_DRE"
+			          }
+			        },
+			        "medida.resultado_do_período": {
+			          "Target": {
+			            "Entity": "medida.resultado_do_período"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_DRE"
+			            },
+			            "Object": {
+			              "Role": "medida.resultado_do_período"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_DREs_have_resultado_do_período"
+			        }
+			      ]
+			    },
+			    "f_DRE_has_medida_receitas_financeiras": {
+			      "Binding": {
+			        "ConceptualEntity": "f_DRE"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_DRE": {
+			          "Target": {
+			            "Entity": "f_DRE"
+			          }
+			        },
+			        "medida.receitas_financeiras": {
+			          "Target": {
+			            "Entity": "medida.receitas_financeiras"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_DRE"
+			            },
+			            "Object": {
+			              "Role": "medida.receitas_financeiras"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_DREs_have_receitas_financeiras1"
+			        }
+			      ]
+			    },
+			    "f_DRE_has_medida_despesas_financeiras": {
+			      "Binding": {
+			        "ConceptualEntity": "f_DRE"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_DRE": {
+			          "Target": {
+			            "Entity": "f_DRE"
+			          }
+			        },
+			        "medida.despesas_financeiras": {
+			          "Target": {
+			            "Entity": "medida.despesas_financeiras"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_DRE"
+			            },
+			            "Object": {
+			              "Role": "medida.despesas_financeiras"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_DREs_have_despesas_financeiras1"
+			        }
+			      ]
+			    },
+			    "f_DRE_has_medida_despesas_operacionais": {
+			      "Binding": {
+			        "ConceptualEntity": "f_DRE"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_DRE": {
+			          "Target": {
+			            "Entity": "f_DRE"
+			          }
+			        },
+			        "medida.despesas_operacionais": {
+			          "Target": {
+			            "Entity": "medida.despesas_operacionais"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_DRE"
+			            },
+			            "Object": {
+			              "Role": "medida.despesas_operacionais"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_DREs_have_despesas_operacionais"
+			        }
+			      ]
+			    },
+			    "f_DRE_has_medida_lucro_bruto": {
+			      "Binding": {
+			        "ConceptualEntity": "f_DRE"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_DRE": {
+			          "Target": {
+			            "Entity": "f_DRE"
+			          }
+			        },
+			        "medida.lucro_bruto": {
+			          "Target": {
+			            "Entity": "medida.lucro_bruto"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_DRE"
+			            },
+			            "Object": {
+			              "Role": "medida.lucro_bruto"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_DREs_have_lucro_bruto"
+			        }
+			      ]
+			    },
+			    "f_DRE_has_medida_cmv": {
+			      "Binding": {
+			        "ConceptualEntity": "f_DRE"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_DRE": {
+			          "Target": {
+			            "Entity": "f_DRE"
+			          }
+			        },
+			        "medida.cmv": {
+			          "Target": {
+			            "Entity": "medida.cmv"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_DRE"
+			            },
+			            "Object": {
+			              "Role": "medida.cmv"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_DREs_have_cmv"
+			        }
+			      ]
+			    },
+			    "f_DRE_has_medida_receita_líquida": {
+			      "Binding": {
+			        "ConceptualEntity": "f_DRE"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_DRE": {
+			          "Target": {
+			            "Entity": "f_DRE"
+			          }
+			        },
+			        "medida.receita_líquida": {
+			          "Target": {
+			            "Entity": "medida.receita_líquida"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_DRE"
+			            },
+			            "Object": {
+			              "Role": "medida.receita_líquida"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_DREs_have_receita_líquida"
+			        }
+			      ]
+			    },
+			    "f_DRE_has_medida_deduções_sobre_vendas": {
+			      "Binding": {
+			        "ConceptualEntity": "f_DRE"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_DRE": {
+			          "Target": {
+			            "Entity": "f_DRE"
+			          }
+			        },
+			        "medida.deduções_sobre_vendas": {
+			          "Target": {
+			            "Entity": "medida.deduções_sobre_vendas"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_DRE"
+			            },
+			            "Object": {
+			              "Role": "medida.deduções_sobre_vendas"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_DREs_have_deduções_sobre_vendas"
+			        }
+			      ]
+			    },
+			    "f_DRE_has_medida_receita_bruta": {
+			      "Binding": {
+			        "ConceptualEntity": "f_DRE"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_DRE": {
+			          "Target": {
+			            "Entity": "f_DRE"
+			          }
+			        },
+			        "medida.receita_bruta": {
+			          "Target": {
+			            "Entity": "medida.receita_bruta"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_DRE"
+			            },
+			            "Object": {
+			              "Role": "medida.receita_bruta"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_DREs_have_receita_bruta"
+			        }
+			      ]
+			    },
+			    "d_calendario_has_mês_ano": {
+			      "Binding": {
+			        "ConceptualEntity": "d_Calendario"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "d_calendario": {
+			          "Target": {
+			            "Entity": "d_calendario"
+			          }
+			        },
+			        "d_calendario.mês_ano": {
+			          "Target": {
+			            "Entity": "d_calendario.mês_ano"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_calendario"
+			            },
+			            "Object": {
+			              "Role": "d_calendario.mês_ano"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_calendarios_have_mês_anos"
+			        }
+			      ]
+			    },
+			    "painel_has_medida": {
+			      "Binding": {
+			        "ConceptualEntity": "Painel"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "painel": {
+			          "Target": {
+			            "Entity": "painel"
+			          }
+			        },
+			        "painel.medida": {
+			          "Target": {
+			            "Entity": "painel.medida"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "painel"
+			            },
+			            "Object": {
+			              "Role": "painel.medida"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "painels_have_medidas"
+			        }
+			      ]
+			    },
+			    "f_DRE_me_trimestre_has_f_DRE_me_mê": {
+			      "Binding": {
+			        "ConceptualEntity": "f_DRE"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_DRE.me.trimestre": {
+			          "Target": {
+			            "Entity": "f_DRE.me.trimestre"
+			          }
+			        },
+			        "f_DRE.me.mê": {
+			          "Target": {
+			            "Entity": "f_DRE.me.mê"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_DRE.me.trimestre"
+			            },
+			            "Object": {
+			              "Role": "f_DRE.me.mê"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "trimestres_have_mê"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_DRE.me.mê"
+			            },
+			            "Object": {
+			              "Role": "f_DRE.me.trimestre"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "mê_have_trimestres"
+			        },
+			        {
+			          "Preposition": {
+			            "Subject": {
+			              "Role": "f_DRE.me.mê"
+			            },
+			            "Prepositions": [
+			              {
+			                "in": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Object": {
+			              "Role": "f_DRE.me.trimestre"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "mê_are_in_trimestres"
+			        }
+			      ]
+			    },
+			    "f_DRE_me_mê_has_f_DRE_me_dia": {
+			      "Binding": {
+			        "ConceptualEntity": "f_DRE"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_DRE.me.mê": {
+			          "Target": {
+			            "Entity": "f_DRE.me.mê"
+			          }
+			        },
+			        "f_DRE.me.dia": {
+			          "Target": {
+			            "Entity": "f_DRE.me.dia"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_DRE.me.mê"
+			            },
+			            "Object": {
+			              "Role": "f_DRE.me.dia"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "mê_have_dias"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_DRE.me.dia"
+			            },
+			            "Object": {
+			              "Role": "f_DRE.me.mê"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dias_have_mê"
+			        },
+			        {
+			          "Preposition": {
+			            "Subject": {
+			              "Role": "f_DRE.me.dia"
+			            },
+			            "Prepositions": [
+			              {
+			                "in": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Object": {
+			              "Role": "f_DRE.me.mê"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dias_are_in_mê"
+			        }
+			      ]
+			    }
+			  },
+			  "Agents": {
+			    "Internal": {
+			      "Version": "1.1.0"
+			    }
+			  }
+			}
+		contentType: json
+
